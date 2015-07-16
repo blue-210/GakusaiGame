@@ -2,19 +2,40 @@
 <html lang="ja">
 <head>
    <meta charset="UTF-8">
-   <title>数字タッチゲーム</title>
+   <title>Touch The Number!</title>
    <script type="text/javascript" src="../jquery-2.1.4.js"></script>
-   <script type="text/javascript" src="../bootstrap\js\bootstrap.min.js"></script>
+   <script type="text/javascript" src="../BootStrap\js\bootstrap.min.js"></script>
    <script type="text/javascript" src="touchnumber.js"></script>
    <!--BootStrap-->
-   <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+   <link href="../BootStrap/css/bootstrap.min.css" rel="stylesheet">
    <link href="touchnumber.css" rel="stylesheet">
 </head>
 <body>
-   <h1>数字タッチゲーム</h1>
-   <button class="btn" id="start">START</button>
-   <p>TIME: <span id="timer">0.00</span></p>
+   <h1 class="header text-center">Touch The Number!</h1>
+
+   <!-- モーダルの設定-->
+   <div class="modal fade" id="rule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">閉じる</span></button>
+           <h4 class="modal-title" id="myModalLabel">Touch The Number!のルール</h4>
+         </div>
+         <div class="modal-body">
+           <p>1から10までの数字を順番にすばやくクリック！</p>
+           <p>早く見つけられるとランキングに君の記録がのるよ！</p>
+         </div>
+       </div><!-- /.modal-content -->
+     </div><!-- /.modal-dialog -->
+   </div><!-- /.modal -->
+
+   <!--スタートボタン-->
+   <button class="btn btn-lg" id="start">START</button>
+
+   <!-- タイマー　-->
+   <p>TIME: <span class="glyphicon glyphicon-time" id="timer">0.00</span></p>
+
+   <!--数字の配置場所-->
    <ul id="board"></ul>
-   
 </body>
 </html>

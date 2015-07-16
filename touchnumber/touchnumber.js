@@ -25,6 +25,9 @@ $(function(){
 
         for (var i = 0; i < BTN_NUMBER; i++) {
             listArray.push('<li class="btn btn-info">' + (i + 1) + '</li>');
+            if(BTN_NUMBER%4 == 0){
+               listArray.push('<br/>')
+            }
         }
 
         while (listArray.length) {
@@ -48,7 +51,7 @@ $(function(){
     var num = $(this).text();
 
     if (num == currentNum) {
-        $(this).addClass("is-pushed");
+        $(this).attr('class','btn btn-success');
 
         if (currentNum == BTN_NUMBER) {
             clearTimeout(watchTimerID);
@@ -58,4 +61,8 @@ $(function(){
         currentNum++;
     }
    }
+});
+
+$(function(){
+   $('#rule').modal('show');
 });
