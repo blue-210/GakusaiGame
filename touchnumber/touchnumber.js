@@ -49,7 +49,11 @@ $(function(){
     var num = $(this).text();
 
     if (num == currentNum) {
+<<<<<<< HEAD
         $(this).attr("class","btn btn-success");
+=======
+        $(this).attr('class','btn btn-success');
+>>>>>>> master
 
         if (currentNum == BTN_NUMBER) {
             clearTimeout(watchTimerID);
@@ -59,4 +63,8 @@ $(function(){
         currentNum++;
     }
    }
+});
+
+$(function(){
+   $('#rule').modal('show');
 });

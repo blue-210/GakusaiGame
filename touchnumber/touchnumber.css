@@ -1,10 +1,3 @@
-li{
-   display: inline-block;
-   width: 50px;
-   margin: 0 5px 10px;
-   background-color: #e08e79;
-   color: #ece5ce;
-   font-size: 20px;
-   line-height: 50px;
-   text-align: center;
+#myModalLabel{
+	color:blue;
 }
