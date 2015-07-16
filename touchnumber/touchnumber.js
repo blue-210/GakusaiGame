@@ -1,5 +1,5 @@
 $(function(){
-   var BTN_NUMBER = 16, // 出現する数字の数を指定する
+   var BTN_NUMBER = 10, // 出現する数字の数を指定する
       TIME_COUNT = 3, // ゲーム開始のカウントダウンを何秒から始めるか指定する
       $board = $("#board"), // ランダムな数字を入れるところ
       $timeCount = $("#timer"), // タイマーを表示するところ
@@ -24,16 +24,14 @@ $(function(){
             lists = "";
 
         for (var i = 0; i < BTN_NUMBER; i++) {
-            listArray.push('<li class="btn btn-info">' + (i + 1) + '</li>');
-            if(BTN_NUMBER%4 == 0){
-               listArray.push('<br/>')
-            }
+            listArray.push('<li class="btn btn-danger">' + (i + 1) + '</li>');
         }
 
         while (listArray.length) {
             lists += listArray.splice(Math.floor(Math.random() * listArray.length), 1);
         }
         $board.append(lists);
+        $board.addClass("li");
     }
 
     function startTimer() {
@@ -51,7 +49,11 @@ $(function(){
     var num = $(this).text();
 
     if (num == currentNum) {
+<<<<<<< HEAD
+        $(this).attr("class","btn btn-success");
+=======
         $(this).attr('class','btn btn-success');
+>>>>>>> master
 
         if (currentNum == BTN_NUMBER) {
             clearTimeout(watchTimerID);
