@@ -13,15 +13,15 @@ var t2;
 
 function gameStart(){
 	$('#startbtn').hide();
-	
+
 	var dummy = games[level][0];
 	var seikai = games[level][1];
-	
+
 	if(level == 0){
 		$('#score').empty();
 		t1 = new Date().getTime();
 	}
-	
+
 	//dim * dimのspan要素を作って#cellsに突っ込む
 	var cells ='';
 	for(var i=1; i<=dim*dim; i++){
@@ -31,20 +31,20 @@ function gameStart(){
 		}
 	}
 	$('#cells').html(cells);
-	
-	
+
+
 	//dummyで埋められた配列をつくる
 	var chars = [];
 	for(var i=0; i<dim*dim; i++){
 		chars.push(dummy);
 	}
-	
-	
+
+
 	//配列のうち一つをseikaiにする
 	var offset = Math.floor(Math.random() * chars.length);
 	chars.splice(offset, 1, seikai);
-	
-	
+
+
 	//span要素にそれらの配列の値をはめこむ
 	for(var i=1; i<=chars.length; i++){
 		$('#s'+i).text(chars[i-1]);
@@ -60,7 +60,7 @@ function gameStart(){
 					dim = DIM_FIRST;
 					return false;
 				}
-				
+
 				gameStart();
 			}
 			else alert("ちがうよ？");
