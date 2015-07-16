@@ -4,6 +4,7 @@ var games = [
 	['白 ', '臼 '],
 	['問 ', '間 '],
 ];
+
 var MAX_LEVEL = games.length-1;
 var DIM_FIRST = 5;
 var DIM_DELTA = 3;
@@ -31,6 +32,7 @@ function gameStart(){
 		}
 	}
 	$('#cells').html(cells);
+	$('#level').text('レベル'+(level+1) );
 	
 	
 	//dummyで埋められた配列をつくる
@@ -54,8 +56,9 @@ function gameStart(){
 				dim += DIM_DELTA;
 				if(level > MAX_LEVEL){
 					t2 = new Date().getTime();
+					$('#level').empty();
 					$('#cells').empty();
-					$('#score').text('Your score is '+(t2-t1)/1000+'!!');
+					$('#score').text('あなたの結果は '+(t2-t1)/1000+'秒です!!');
 					level = 0;
 					dim = DIM_FIRST;
 					return false;
