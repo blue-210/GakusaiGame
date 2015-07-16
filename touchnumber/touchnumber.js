@@ -1,19 +1,20 @@
-var BTN_NUMBER = 16, // 出現する数字の数を指定する
-    TIME_COUNT = 3, // ゲーム開始のカウントダウンを何秒から始めるか指定する
-    $board = $("#board"), // ランダムな数字を入れるところ
-    $timeCount = $("#timer"), // タイマーを表示するところ
-    currentNum = 1, // 今押さなければいけない数字を保存するもの
-    startTime = undefined, // スタートを押したときの時間を保存するもの
-    countTimerID = undefined, // カウントダウンのタイマー
-    watchTimerID = undefined, // ゲームのタイマー
-    resultTime = 0; // ゲームの結果タイムを保存するもの
+$(function(){
+   var BTN_NUMBER = 16, // 出現する数字の数を指定する
+      TIME_COUNT = 3, // ゲーム開始のカウントダウンを何秒から始めるか指定する
+      $board = $("#board"), // ランダムな数字を入れるところ
+      $timeCount = $("#timer"), // タイマーを表示するところ
+      currentNum = 1, // 今押さなければいけない数字を保存するもの
+      startTime = undefined, // スタートを押したときの時間を保存するもの
+      watchTimerID = undefined, // ゲームのタイマー
+      resultTime = 0; // ゲームの結果タイムを保存するもの
 
     $("#start").on("click", function() {
         $timeCount.text("0.00");
         $board.html("");
         currentNum = 1;
         clearTimeout(watchTimerID);
-        startCountDown();
+        initBoard();
+        startTimer();
     });
 
     $board.on("click", "li", checkNum);
@@ -23,13 +24,12 @@ var BTN_NUMBER = 16, // 出現する数字の数を指定する
             lists = "";
 
         for (var i = 0; i < BTN_NUMBER; i++) {
-            listArray.push('<li>' + (i + 1) + '</li>');
+            listArray.push('<li class="btn btn-info">' + (i + 1) + '</li>');
         }
 
         while (listArray.length) {
             lists += listArray.splice(Math.floor(Math.random() * listArray.length), 1);
         }
-
         $board.append(lists);
     }
 
@@ -57,4 +57,5 @@ var BTN_NUMBER = 16, // 出現する数字の数を指定する
 
         currentNum++;
     }
-}
+   }
+});
