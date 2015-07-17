@@ -52,7 +52,10 @@ $(function(){
 
         if (currentNum == BTN_NUMBER) {
             clearTimeout(watchTimerID);
-            alert(resultTime);
+            $('#start').hide();
+            $('#board').hide();
+            $('#timer').hide();
+            $('#score').text('あなたの結果は'+resultTime+'秒です!!');
         }
 
         currentNum++;

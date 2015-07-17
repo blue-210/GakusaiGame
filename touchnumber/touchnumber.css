@@ -1,3 +1,22 @@
 #myModalLabel{
+
 	color:blue;
+}
+
+#start{
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+#timer{
+	font-size: large;
+}
+
+#board{
+	font-size:30px;
+	margin-top:20px;
+}
+
+#score{
+	font-size:30px;
 }
