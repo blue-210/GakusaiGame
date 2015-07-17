@@ -1,6 +1,6 @@
 $(function(){
-   var BTN_NUMBER = 16, // 出現する数字の数を指定する
-      TIME_COUNT = 3, // ゲーム開始のカウントダウンを何秒から始めるか指定する
+   var SIZE = 5, // 出現する数字の数を指定する
+      BTN_NUMBER = SIZE*SIZE;
       $board = $("#board"), // ランダムな数字を入れるところ
       $timeCount = $("#timer"), // タイマーを表示するところ
       currentNum = 1, // 今押さなければいけない数字を保存するもの
@@ -17,20 +17,26 @@ $(function(){
         startTimer();
     });
 
-    $board.on("click", "div", checkNum);
+    $board.on("click", "#num", checkNum);
 
     function initBoard() {
-        var listArray = [],
-            lists = "";
+      var buttons = [];
+      var button;
 
-        for (var i = 1; i <= BTN_NUMBER; i++) {
-             listArray.push('<div class="btn btn-danger">' + i + '</div>');
-        }
+      // ボタンを生成
+      for (var i = 0; i < BTN_NUMBER; i++) {
+           buttons.push('<button id="num" class="btn btn-default btn-lg">'+(i+1)+'</button>');
+      }
 
-        while (listArray.length) {
-            lists += listArray.splice(Math.floor(Math.random() * listArray.length), 1);
-        }
-        $board.append(lists);
+      while(buttons.length){
+         // ボタンにランダムな数字を配置
+         button = buttons.splice(Math.floor(Math.random() * buttons.length),1);
+         // ボタンの配置
+         $board.append(button[0]);
+         if(buttons.length % SIZE == 0){
+            $board.append('</br>');
+         }
+      }
     }
 
     function startTimer() {
@@ -48,7 +54,8 @@ $(function(){
     var num = $(this).text();
 
     if (num == currentNum) {
-        $(this).attr("class","btn btn-success");
+        $(this).prop('disabled', true);
+        $(this).text('○');
 
         if (currentNum == BTN_NUMBER) {
             clearTimeout(watchTimerID);
@@ -57,7 +64,6 @@ $(function(){
             $('#timer').hide();
             $('#score').text('あなたの結果は'+resultTime+'秒です!!');
         }
-
         currentNum++;
     }
    }
