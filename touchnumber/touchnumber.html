@@ -11,20 +11,22 @@
    <link href="touchnumber.css" rel="stylesheet">
 </head>
 <body>
-   <h1 class="header text-center">Touch The Number!</h1>
+   <div class="page-header"><h1 class="text-center">Touch The Number!</h1></div>
 
    <div class="container">
       <div class="row">
          <div class="col-md-4"></div>
          <div class="col-md-4 text-center">
             <!--スタートボタン-->
-            <button class="btn btn-lg" id="start">START</button>
+            <button class="btn btn-lg" id="start">はじめる</button>
 
             <!-- タイマー　-->
             <p><span class="glyphicon glyphicon-time" id="timer">0.00</span></p>
 
             <!--数字の配置場所-->
             <div id="board"></div>
+            <!-- スコアの表示先 -->
+            <div id="score" class="label label-primary"></div>
          </div>
          <div class="col-md-4"></div>
       </div>
