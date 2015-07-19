@@ -23,7 +23,7 @@ $(function(){
       var buttons = [];
       var button;
 
-      // ボタンを生成
+      //ボタンを生成
       for (var i = 0; i < BTN_NUMBER; i++) {
            buttons.push('<button id="num" class="btn btn-default btn-lg">'+(i+1)+'</button>');
       }
