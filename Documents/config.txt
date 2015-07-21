@@ -1,11 +1,17 @@
-H2データベース　
-ドライバ org.h2.Driver
-JDBC URL jdbc:h2:file:C:/GitHub/GakusaiGame/h2/rank
+Oracle
+ドライバ oracle.jdbc.driver.OracleDriver
+ローカル用　JDBC URL jdbc:oracle:thin:@localhost:1521:orcl
+本番用　JDBC URL jdbc:oracle:thin:[情報処理科サーバ]:1521:orcl
 ユーザー名:gakusai
 パス:game
 
 Tomcat
-コンテキストパス
+ローカル用コンテキストパス
 <Context path="/GakusaiGame" reloadable="true" docBase="C:\GitHub\GakusaiGame" debug="0">
-   <Resource name="jdbc/h2" auth="Container" type="javax.sql.DataSource" username="gakusai" password="game" driverClassName="org.h2.Driver" url="jdbc:h2:file:C:/GitHub/GakusaiGame/h2/rank" maxActive="5" maxIdle="5" maxWait="10000" removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"/>
+   <Resource name="jdbc/ora" auth="Container" type="javax.sql.DataSource" username="gakusai" password="game" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:@localhost:1521:orcl" maxActive="5" maxIdle="5" maxWait="10000" removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"/>
+</Context>
+
+本番用
+<Context path="/GakusaiGame" reloadable="true" docBase="C:\GitHub\GakusaiGame" debug="0">
+   <Resource name="jdbc/ora" auth="Container" type="javax.sql.DataSource" username="gakusai" password="game" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:[情報処理科サーバ]:1521:orcl" maxActive="5" maxIdle="5" maxWait="10000" removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"/>
 </Context>
