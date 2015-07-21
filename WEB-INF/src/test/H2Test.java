@@ -1,6 +1,6 @@
 package test;
 
-import integration.*;
+import dao.*;
 import java.sql.SQLException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,7 +8,8 @@ import java.sql.ResultSet;
 import java.sql.DriverManager;
 
 public class H2Test{
-   public static void main(String[] args) {
+
+   public static void testDb(){
       Connector cn = new H2Connector();
       Connection conn = cn.getConnection();
 

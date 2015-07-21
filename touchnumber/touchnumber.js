@@ -72,3 +72,18 @@ $(function(){
 $(function(){
    $('#rule').modal('show');
 });
+
+function sendResult(time){
+   $.ajax({
+      url: '../WEB-INF/src/JudgeServlet.java',
+      type:'GET',
+      dataType: 'text',
+      timeout:1000,
+      success: function(data) {
+                  alert("ok");
+               },
+      error: function(data) {
+               alert("ng");
+               }
+   });
+}
