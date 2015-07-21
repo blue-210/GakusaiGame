@@ -8,7 +8,7 @@ CREATE TABLE touchranking (
 CREATE TABLE diffranking(
    rank number(5,2),
    score number(5,2)
-)
+);
 
 -- テストデータの挿入
 INSERT INTO touchranking vALUES(1,3.00);
@@ -17,3 +17,7 @@ INSERT INTO touchranking vALUES(3,5.00);
 INSERT INTO diffranking vALUES(1,3.00);
 INSERT INTO diffranking vALUES(2,4.00);
 INSERT INTO diffranking vALUES(3,5.00);
+
+-- 表削除
+DROP TABLE touchranking;
+DROP TABLE diffranking;
