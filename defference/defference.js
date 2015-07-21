@@ -2,25 +2,28 @@ var level = 0;
 var games = [
 	['大 ', '太 '],
 	['白 ', '臼 '],
-	['問 ', '間 '],
+	['問 ', '門 '],
 ];
 
-var MAX_LEVEL = games.length-1;
-var DIM_FIRST = 5;
-var DIM_DELTA = 3;
-var dim = DIM_FIRST;
-var t1;
-var t2;
+var MAX_LEVEL = games.length-1,
+	DIM_FIRST = 5,
+	DIM_DELTA = 3,
+	dim = DIM_FIRST,
+	startTime = undefined, // スタートを押したときの時間を保存するもの
+	watchTimerID = undefined, // ゲームのタイマー
+	resultTime = 0; // ゲームの結果タイムを保存するもの
 
+//スタートボタンが押されたらゲーム開始
 function gameStart(){
-	$('#startbtn').hide();
+	$('#startbtn').hide();//スタートボタンを隠す
 
-	var dummy = games[level][0];
-	var seikai = games[level][1];
-
+	var dummy = games[level][0];//ダミーの文字
+	var seikai = games[level][1];//正解の文字
+	
+	//最初のレベルのとき
 	if(level == 0){
-		$('#score').empty();
-		t1 = new Date().getTime();
+		clearTimeout(watchTimerID);
+		startTimer();
 	}
 
 	//dim * dimのspan要素を作って#cellsに突っ込む
@@ -55,10 +58,11 @@ function gameStart(){
 				level++;
 				dim += DIM_DELTA;
 				if(level > MAX_LEVEL){
-					t2 = new Date().getTime();
-					$('#level').empty();
-					$('#cells').empty();
-					$('#score').text('あなたの結果は '+(t2-t1)/1000+'秒です!!');
+					clearTimeout(watchTimerID);
+					$('#level').hide();
+					$('#cells').hide();
+					$('#timer').hide();
+					$('#score').text('あなたの結果は '+resultTime+'秒です!!');
 					level = 0;
 					dim = DIM_FIRST;
 					return false;
@@ -69,6 +73,18 @@ function gameStart(){
 			else alert("ちがうよ？");
 		});
 	}
+}
+
+function startTimer() {
+	startTime = new Date().getTime();
+	runTimer();
+}
+
+function runTimer() {
+	resultTime = (((new Date()).getTime() - startTime) / 1000).toFixed(2);
+	console.log(resultTime);
+	$('#timer').text(resultTime);
+	watchTimerID = setTimeout(runTimer, 10);
 }
 
 $(function(){
