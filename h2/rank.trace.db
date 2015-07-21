@@ -37,3 +37,115 @@ DROP TABLE diffranking [42102-187]
 org.h2.jdbc.JdbcSQLException: テーブル "DIFFRANKING" が見つかりません
 Table "DIFFRANKING" not found; SQL statement:
 SELECT * FROM diffranking [42102-187]
+07-21 18:56:42 database: flush
+org.h2.message.DbException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]" [50000-187]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:368)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:351)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2782)
+	at org.h2.mvstore.db.MVTableEngine$Store.<init>(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:98)
+	at org.h2.engine.Database.getPageStore(Database.java:2389)
+	at org.h2.engine.Database.open(Database.java:669)
+	at org.h2.engine.Database.openDatabase(Database.java:266)
+	at org.h2.engine.Database.<init>(Database.java:260)
+	at org.h2.engine.Engine.openSession(Engine.java:60)
+	at org.h2.engine.Engine.openSession(Engine.java:167)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:145)
+	at org.h2.engine.Engine.createSession(Engine.java:128)
+	at org.h2.engine.Engine.createSession(Engine.java:26)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:347)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:108)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at test.H2Test.main(H2Test.java:17)
+Caused by: org.h2.jdbc.JdbcSQLException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]" [50000-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 24 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:337)
+	... 19 more
+07-21 18:57:05 database: flush
+org.h2.message.DbException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]" [50000-187]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:368)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:351)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2782)
+	at org.h2.mvstore.db.MVTableEngine$Store.<init>(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:98)
+	at org.h2.engine.Database.getPageStore(Database.java:2389)
+	at org.h2.engine.Database.open(Database.java:669)
+	at org.h2.engine.Database.openDatabase(Database.java:266)
+	at org.h2.engine.Database.<init>(Database.java:260)
+	at org.h2.engine.Engine.openSession(Engine.java:60)
+	at org.h2.engine.Engine.openSession(Engine.java:167)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:145)
+	at org.h2.engine.Engine.createSession(Engine.java:128)
+	at org.h2.engine.Engine.createSession(Engine.java:26)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:347)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:108)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at test.H2Test.main(H2Test.java:17)
+Caused by: org.h2.jdbc.JdbcSQLException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]" [50000-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 24 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:337)
+	... 19 more
+07-21 18:57:55 database: flush
+org.h2.message.DbException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]" [50000-187]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:295)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:93)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:368)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:351)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2782)
+	at org.h2.mvstore.db.MVTableEngine$Store.<init>(MVTableEngine.java:162)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:98)
+	at org.h2.engine.Database.getPageStore(Database.java:2389)
+	at org.h2.engine.Database.open(Database.java:669)
+	at org.h2.engine.Database.openDatabase(Database.java:266)
+	at org.h2.engine.Database.<init>(Database.java:260)
+	at org.h2.engine.Engine.openSession(Engine.java:60)
+	at org.h2.engine.Engine.openSession(Engine.java:167)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:145)
+	at org.h2.engine.Engine.createSession(Engine.java:128)
+	at org.h2.engine.Engine.createSession(Engine.java:26)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:347)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:108)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:92)
+	at org.h2.Driver.connect(Driver.java:72)
+	at java.sql.DriverManager.getConnection(DriverManager.java:664)
+	at java.sql.DriverManager.getConnection(DriverManager.java:270)
+	at test.H2Test.main(H2Test.java:17)
+Caused by: org.h2.jdbc.JdbcSQLException: 一般エラー: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]"
+General error: "java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]" [50000-187]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	... 24 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:C:/GitHub/GakusaiGame/h2/rank.mv.db [1.4.187/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:773)
+	at org.h2.mvstore.FileStore.open(FileStore.java:172)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:337)
+	... 19 more
+07-21 19:09:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "COMMI[*] "; 期待されるステートメント "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"
+Syntax error in SQL statement "COMMI[*] "; expected "COMMIT, CREATE, CALL, CHECKPOINT, COMMENT, {"; SQL statement:
+commi [42001-187]
