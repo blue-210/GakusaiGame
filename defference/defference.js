@@ -90,3 +90,4 @@ function runTimer() {
 $(function(){
 	$('#rule').modal('show');
 });
+
