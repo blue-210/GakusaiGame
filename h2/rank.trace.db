@@ -1,0 +1,39 @@
+07-21 15:19:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: SQLステートメントに文法エラーがあります "CREATE TABLE DIFFRANKING(
+   RANK NUMBER,
+   SCORE NUMBER
+)
+
+INSERT[*] INTO TOUCHRANKING VALUES(1,3.00) "
+Syntax error in SQL statement "CREATE TABLE DIFFRANKING(
+   RANK NUMBER,
+   SCORE NUMBER
+)
+
+INSERT[*] INTO TOUCHRANKING VALUES(1,3.00) "; SQL statement:
+CREATE TABLE diffranking(
+   rank number,
+   score number
+)
+
+INSERT INTO touchranking vALUES(1,3.00) [42000-187]
+07-21 15:19:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "DIFFRANKING" が見つかりません
+Table "DIFFRANKING" not found; SQL statement:
+INSERT INTO diffranking vALUES(1,3.00) [42102-187]
+07-21 15:19:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "DIFFRANKING" が見つかりません
+Table "DIFFRANKING" not found; SQL statement:
+INSERT INTO diffranking vALUES(2,4.00) [42102-187]
+07-21 15:19:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "DIFFRANKING" が見つかりません
+Table "DIFFRANKING" not found; SQL statement:
+INSERT INTO diffranking vALUES(3,5.00) [42102-187]
+07-21 15:26:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "DIFFRANKING" が見つかりません
+Table "DIFFRANKING" not found; SQL statement:
+DROP TABLE diffranking [42102-187]
+07-21 15:26:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: テーブル "DIFFRANKING" が見つかりません
+Table "DIFFRANKING" not found; SQL statement:
+SELECT * FROM diffranking [42102-187]
