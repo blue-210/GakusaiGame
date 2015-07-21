@@ -1,12 +1,12 @@
 -- 数字タッチゲームランク用のテーブル作成
 CREATE TABLE touchranking (
-   rank number(5,2),
+   rank number(1),
    score number(5,2)
 );
 
 -- 間違い探しゲームのランク用のテーブル作成
 CREATE TABLE diffranking(
-   rank number(5,2),
+   rank number(1),
    score number(5,2)
 );
 

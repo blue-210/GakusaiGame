@@ -19,7 +19,7 @@ public class H2Connector extends Connector{
          e.printStackTrace();
       }finally{
          try{
-            if(conn == null){
+            if(conn != null){
                conn.close();
             }
          }catch(SQLException ex){
