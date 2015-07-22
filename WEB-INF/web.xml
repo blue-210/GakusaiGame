@@ -5,7 +5,7 @@
 	http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	version="3.1"
 	metadata-complete="true">
-	
+
 	<servlet>
 		<servlet-name>judge</servlet-name>
 		<servlet-class>JudgeServlet</servlet-class>
@@ -17,7 +17,7 @@
 
    <servlet>
       <servlet-name>ranking</servlet-name>
-      <jsp-file>ranking.jsp</jsp-file>
+      <jsp-file>/ranking.jsp</jsp-file>
    </servlet>
    <servlet-mapping>
       <servlet-name>ranking</servlet-name>

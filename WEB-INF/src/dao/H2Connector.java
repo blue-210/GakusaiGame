@@ -6,26 +6,35 @@ import javax.sql.DataSource;
 import javax.naming.NamingException;
 import javax.naming.InitialContext;
 
-public class H2Connector extends Connector{
+public class H2Connector implements Connector{
+   private Connection conn = null;
+
    public Connection getConnection(){
-      Connection conn = null;
       try{
          InitialContext inic = new InitialContext();
-         DataSource source = (DataSource)inic.lookup("java:comp/env/jdbc/h2");
+         DataSource source = (DataSource)inic.lookup("java:comp/env/jdbc/gakusai");
          conn = source.getConnection();
       }catch(NamingException e){
          e.printStackTrace();
       }catch(SQLException e){
          e.printStackTrace();
-      }finally{
-         try{
-            if(conn != null){
-               conn.close();
-            }
-         }catch(SQLException ex){
-            ex.printStackTrace();
-         }
       }
       return conn;
+   }
+
+   public void close(){
+      try{
+         conn.close();
+      }catch(SQLException e){
+         e.printStackTrace();
+      }finally{
+         if(conn != null){
+            try{
+               conn.close();
+            }catch(SQLException ex){
+               ex.printStackTrace();
+            }
+         }
+      }
    }
 }
