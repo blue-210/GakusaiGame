@@ -2,6 +2,7 @@ span{
 	cursor:pointer;
 }
 #cells{
+	font-family:;
 	font-size:40px;
 	margin-top:20px;
 }
@@ -10,8 +11,7 @@ span{
 }
 
 #level{
-	margin-top:50px;
-	font-size:25px;
+	font-size:20px;
 }
 
 #timer{
