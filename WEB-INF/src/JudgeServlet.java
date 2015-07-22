@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 
 import di.InstanceCreator;
-import test.H2Test;
+import test.OracleConnectionTest;
 
 public class JudgeServlet extends HttpServlet{
    public void doGet(HttpServletRequest req, HttpServletResponse res)
@@ -23,7 +23,7 @@ public class JudgeServlet extends HttpServlet{
          PrintWriter out = res.getWriter();
          out.print(resJson);
 
-         H2Test.testDb();
+         OracleConnectionTest.testDb();
          // RequestDispatcher dispatcher = req.getRequestDispatcher("ranking");
          // 受け取ったスコアを判定する
          //RankJudge judge = (RankJudge)InstanceCreator.create("judge");

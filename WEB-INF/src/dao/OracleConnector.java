@@ -6,7 +6,7 @@ import javax.sql.DataSource;
 import javax.naming.NamingException;
 import javax.naming.InitialContext;
 
-public class H2Connector implements Connector{
+public class OracleConnector implements Connector{
    private Connection conn = null;
 
    public Connection getConnection(){
