@@ -23,8 +23,8 @@ $(document).ready(function(){
 			var $this = $(this);
 			$this.css({"position":"relative"});
 			$(document).click(function(e){
-				var x = e.pageX-5;
-				var y = e.pageY-5;
+				var x = e.pageX -5;
+				var y = e.pageY -45;
 				
 				var pos = {
 					top :(-settings.size/2)+y,
