@@ -2,27 +2,29 @@ package dao;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 import javax.sql.DataSource;
 import javax.naming.NamingException;
 import javax.naming.InitialContext;
 
-public class OracleConnector implements Connector{
+public abstract class OracleConnector implements Connector{
    private Connection conn = null;
 
-   public Connection getConnection(){
+   private void connect(){
       try{
          InitialContext inic = new InitialContext();
          DataSource source = (DataSource)inic.lookup("java:comp/env/jdbc/gakusai");
          conn = source.getConnection();
+         conn.setAutoCommit(false);
       }catch(NamingException e){
          e.printStackTrace();
       }catch(SQLException e){
          e.printStackTrace();
       }
-      return conn;
    }
 
-   public void close(){
+   private void close(){
       try{
          conn.close();
       }catch(SQLException e){
@@ -35,6 +37,29 @@ public class OracleConnector implements Connector{
                ex.printStackTrace();
             }
          }
+      }
+   }
+
+   public ResultSet select(String sql){
+      try{
+         this.connect();
+         PreparedStatement pstm = conn.prepareStatement(sql);
+         pstm.executeQuery();
+         conn.close();
+      }catch(SQLException e){
+         e.printStackTrace();
+      }
+   }
+
+   public void update(String sql){
+      try{
+         this.connect();
+         PreparedStatement pstm = conn.prepareStatement(sql);
+         pstm.executeUpdate();
+         conn.close();
+      }catch(SQLException e){
+         e.printStackTrace();
+         conn.rollback();
       }
    }
 }
