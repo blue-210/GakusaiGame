@@ -7,13 +7,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.DriverManager;
 
-public class H2Test{
-   public static void main(String[] args) {
-      testDb();
-   }
-
+public class OracleConnectionTest{
    public static void testDb(){
-      Connector cn = new H2Connector();
+      Connector cn = new OracleConnector();
       Connection conn = cn.getConnection();
 
       try{

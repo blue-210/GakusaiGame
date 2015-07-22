@@ -1,8 +1,11 @@
 package dao;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 
-public interface Connector{
-   public abstract Connection getConnection();
-   public abstract void close();
+public abstract class Connector{
+   private abstract void Connect();
+   private abstract void close();
+   public abstract ResultSet select(String sql);
+   public abstract void update(String sql);
 }
