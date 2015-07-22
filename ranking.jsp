@@ -10,6 +10,6 @@
    <title>ランキング</title>
 </head>
 <body>
-   <P>${requestParam.score}</p>
+   <P>テスト</p>
 </body>
 </html>
