@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import javax.naming.NamingException;
 import javax.naming.InitialContext;
 
-public abstract class OracleConnector implements Connector{
+public abstract class OracleConnector extends Connector{
    private Connection conn = null;
 
    private void connect(){

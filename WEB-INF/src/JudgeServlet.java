@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
 
 import di.InstanceCreator;
-import test.OracleConnectionTest;
+import logic.*;
 
 public class JudgeServlet extends HttpServlet{
    public void doGet(HttpServletRequest req, HttpServletResponse res)
@@ -16,16 +16,25 @@ public class JudgeServlet extends HttpServlet{
          req.setCharacterEncoding("utf-8");
          // ajaxで送ったデータを取得する
          String score = req.getParameter("score");
+         String table = req.getParameter("table");
          System.out.println(score);
+         System.out.println(table);
 
-         String resJson = "{\"score\":"+score+"}";
-         res.setContentType("application/json; charset=utf-8");
-         PrintWriter out = res.getWriter();
-         out.print(resJson);
+         // 受け取ったスコアを判定
+         RankJudge judge = (RankJudge)InstanceCreator.create("judge");
+         System.out.println("インスタンス化できてる？");
+         judge.judge(Double.parseDouble(score),table);
 
-         OracleConnectionTest.testDb();
-         // RequestDispatcher dispatcher = req.getRequestDispatcher("ranking");
-         // 受け取ったスコアを判定する
-         //RankJudge judge = (RankJudge)InstanceCreator.create("judge");
+         // 順位に変動があれば、DBを更新して、データを取得
+
+         // 無ければ、DBからデータを取得
+
+         // 取得したデータをrequestscopeに登録
+         req.setAttribute("score",score);
+
+         res.setContentType("text/html; charset=utf-8");
+         // 結果をレスポンスする
+         RequestDispatcher dispatcher = req.getRequestDispatcher("ranking");
+         dispatcher.forward(req,res);
    }
 }

@@ -80,15 +80,8 @@ function sendResult(time){
       type:'GET',
       dataType: 'json',
       data:{
-         score:time
+         score:time,
+         table:'touchranking'
       }
    })
-   .done(function(data) {
-      $('#record').text(data.score);
-      $('#result').modal('show');
-   })
-   .fail(function(data) {
-      console.log(data.score);
-      alert("ng");
-   });
 };
