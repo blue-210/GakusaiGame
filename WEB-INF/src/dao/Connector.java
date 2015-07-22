@@ -2,6 +2,7 @@ package dao;
 
 import java.sql.Connection;
 
-public abstract class Connector{
+public interface Connector{
    public abstract Connection getConnection();
+   public abstract void close();
 }

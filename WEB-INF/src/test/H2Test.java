@@ -8,6 +8,9 @@ import java.sql.ResultSet;
 import java.sql.DriverManager;
 
 public class H2Test{
+   public static void main(String[] args) {
+      testDb();
+   }
 
    public static void testDb(){
       Connector cn = new H2Connector();
@@ -26,6 +29,6 @@ public class H2Test{
       }catch(SQLException e){
          e.printStackTrace();
       }
-
+      cn.close();
    }
 }

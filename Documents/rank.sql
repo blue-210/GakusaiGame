@@ -36,3 +36,5 @@ INSERT INTO touchranking vALUES(3,5.00);
 INSERT INTO diffranking vALUES(1,3.00);
 INSERT INTO diffranking vALUES(2,4.00);
 INSERT INTO diffranking vALUES(3,5.00);
+
+commit;

@@ -63,6 +63,7 @@ $(function(){
             $('#board').hide();
             $('#timer').hide();
             $('#score').text('あなたの結果は'+resultTime+'秒です!!');
+            sendResult(resultTime);
         }
         currentNum++;
     }
@@ -75,12 +76,13 @@ $(function(){
 
 function sendResult(time){
    $.ajax({
-      url: '../WEB-INF/src/JudgeServlet.java',
+      url: 'http://localhost:1080/GakusaiGame/judge',
       type:'GET',
       dataType: 'text',
       timeout:1000,
       success: function(data) {
-                  alert("ok");
+                  console.log(data);
+                  $('#result').load('http://localhost:1080/GakusaiGame/ranking');
                },
       error: function(data) {
                alert("ng");
