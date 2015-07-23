@@ -2,6 +2,10 @@ span{
 	cursor:pointer;
 }
 #cells{
+<<<<<<< HEAD
+=======
+	font-family:;
+>>>>>>> f68ee9599a8cf188b351cd0465f38368047edc91
 	font-size:40px;
 	margin-top:20px;
 }
@@ -10,8 +14,12 @@ span{
 }
 
 #level{
+<<<<<<< HEAD
 	margin-top:50px;
 	font-size:25px;
+=======
+	font-size:20px;
+>>>>>>> f68ee9599a8cf188b351cd0465f38368047edc91
 }
 
 #timer{
