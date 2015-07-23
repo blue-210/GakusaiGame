@@ -2,32 +2,43 @@ package logic;
 
 import dao.*;
 import di.InstanceCreator;
+import java.util.ArrayList;
 
-import java.sql.SQLException;
-import java.sql.ResultSet;
-import java.sql.PreparedStatement;
 
 public class RankJudge{
    private Connector cn;
-   private String sql = "SELECT score FROM ";
 
    public void setConnector(Connector cn){
       this.cn = cn;
    }
 
-   public boolean judge(double score, String tableName){
-      sql.concat(tableName);
-      System.out.println(sql);
-      ResultSet rs = cn.select(sql);
-      System.out.println(rs);
-      try{
-         while(rs.next()){
-             double no = rs.getDouble(1);
-             System.out.println(no);
-         }
-      }catch(SQLException e){
-         e.printStackTrace();
+   public ArrayList<Double> judge(double score, String tableName){
+      // 表からデータを取得
+      ArrayList<Double> ranking = cn.select(tableName);
+
+      if(score > ranking.get(2)){
+         // 3位より時間がかかっていた場合
+         // 更新なし
+         return ranking;
+      }else if(score > ranking.get(1)){
+         // 3位よりも速いが、2位よりは遅かった場合
+         // score→3位で更新
+         cn.update(tableName,score,3);
+         return ranking = cn.select(tableName);
+      }else if(score > ranking.get(0)){
+         // 2位よりも速いが、1位よりは遅かった場合
+         // score→2位、2位を3位で更新
+         cn.update(tableName,score,2);
+         cn.update(tableName,ranking.get(1),3);
+         return ranking = cn.select(tableName);
+      }else if(score < ranking.get(0)){
+         // 1位よりも速かった場合
+         // 順位を更新 socre→1位、1位→2位、2位→3位で更新
+         cn.update(tableName,score,1);
+         cn.update(tableName,ranking.get(0),2);
+         cn.update(tableName,ranking.get(1),3);
+         return ranking = cn.select(tableName);
       }
-      return true;
+      return ranking;
    }
 }

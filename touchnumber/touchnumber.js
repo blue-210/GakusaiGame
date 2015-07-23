@@ -1,4 +1,8 @@
 $(function(){
+   $('form').hide();
+});
+
+$(function(){
    var SIZE = 2, // 出現する数字の数を指定する
       BTN_NUMBER = SIZE*SIZE;
       $board = $("#board"), // ランダムな数字を入れるところ
@@ -75,5 +79,9 @@ $(function(){
 });
 
 function sendResult(time){
-   $.get('http://localhost:1080/GakusaiGame/judge?score=2.22&table=touchranking');
+   $('#record').val(time);
+   // alert($('#record').val());
+   $('#tableName').val('touchranking');
+   // alert($('#tableName').val());
+   $('form').submit();
 };

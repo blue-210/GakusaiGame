@@ -5,11 +5,16 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.sql.PreparedStatement;
 import javax.sql.DataSource;
+
 import javax.naming.NamingException;
 import javax.naming.InitialContext;
 
+import java.util.ArrayList;
+
 public class OracleConnector extends Connector{
    private Connection conn = null;
+   private ResultSet rs = null;
+   private ArrayList<Double> ranking = new ArrayList<>();
 
    private void connect(){
       try{
@@ -40,25 +45,37 @@ public class OracleConnector extends Connector{
       }
    }
 
-   public ResultSet select(String sql){
-      ResultSet rs = null;
+   public ArrayList<Double> select(String tableName){
+      String sql = "SELECT score FROM ";
+      sql = sql.concat(tableName+" ORDER BY rank");
+
       try{
          this.connect();
+
          PreparedStatement pstm = conn.prepareStatement(sql);
          rs = pstm.executeQuery();
-         conn.close();
+
+         while(rs.next()){
+            ranking.add(rs.getDouble("score"));
+         }
       }catch(SQLException e){
          e.printStackTrace();
       }
-      return rs;
+      return ranking;
    }
 
-   public void update(String sql){
+   public void update(String tableName, double score, int rank){
+      String sql = "UPDATE ";
+      sql = sql.concat(tableName+" SET score=?, rank=?");
+      System.out.println(sql);
       try{
          this.connect();
+
          PreparedStatement pstm = conn.prepareStatement(sql);
+         pstm.setDouble(1,score);
+         pstm.setInt(2,rank);
+
          pstm.executeUpdate();
-         conn.close();
       }catch(SQLException e){
          e.printStackTrace();
          try{
