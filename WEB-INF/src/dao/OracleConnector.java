@@ -8,7 +8,7 @@ import javax.sql.DataSource;
 import javax.naming.NamingException;
 import javax.naming.InitialContext;
 
-public abstract class OracleConnector extends Connector{
+public class OracleConnector extends Connector{
    private Connection conn = null;
 
    private void connect(){
@@ -41,14 +41,16 @@ public abstract class OracleConnector extends Connector{
    }
 
    public ResultSet select(String sql){
+      ResultSet rs = null;
       try{
          this.connect();
          PreparedStatement pstm = conn.prepareStatement(sql);
-         pstm.executeQuery();
+         rs = pstm.executeQuery();
          conn.close();
       }catch(SQLException e){
          e.printStackTrace();
       }
+      return rs;
    }
 
    public void update(String sql){
@@ -59,7 +61,11 @@ public abstract class OracleConnector extends Connector{
          conn.close();
       }catch(SQLException e){
          e.printStackTrace();
-         conn.rollback();
+         try{
+            conn.rollback();
+         }catch(SQLException ex){
+            ex.printStackTrace();
+         }
       }
    }
 }

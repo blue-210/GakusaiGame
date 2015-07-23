@@ -5,17 +5,20 @@ import di.InstanceCreator;
 
 import java.sql.SQLException;
 import java.sql.ResultSet;
+import java.sql.PreparedStatement;
 
 public class RankJudge{
-   private Connector connector;
-   private String sql = "SELECT score FROM";
+   private Connector cn;
+   private String sql = "SELECT score FROM ";
 
-   public void setConnector(Connector connector){
-      this.connector = connector;
+   public void setConnector(Connector cn){
+      this.cn = cn;
    }
 
    public boolean judge(double score, String tableName){
-      ResultSet rs = connector.select(sql+tableName+" ORDER BY rank");
+      sql.concat(tableName);
+      System.out.println(sql);
+      ResultSet rs = cn.select(sql);
       System.out.println(rs);
       try{
          while(rs.next()){
