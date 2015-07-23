@@ -11,5 +11,10 @@
 </head>
 <body>
    <P>テスト</p>
+   <table>
+      <c:forEach var="rank" items="${applicationContext.ranking}">
+         <tr><td>${rank}</td></tr>
+      </c:forEach>
+   </table>
 </body>
 </html>
