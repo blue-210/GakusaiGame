@@ -58,6 +58,10 @@ public class OracleConnector extends Connector{
          while(rs.next()){
             ranking.add(rs.getDouble("score"));
          }
+
+         pstm.close();
+         rs.close();
+         this.close();
       }catch(SQLException e){
          e.printStackTrace();
       }
@@ -76,6 +80,10 @@ public class OracleConnector extends Connector{
          pstm.setInt(2,rank);
 
          pstm.executeUpdate();
+
+         pstm.close();
+         rs.close();
+         this.close();
       }catch(SQLException e){
          e.printStackTrace();
          try{
