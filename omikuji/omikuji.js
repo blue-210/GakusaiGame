@@ -47,27 +47,55 @@ $(function(){
 		console.log('合計'+sumScore);
 		
 		
-		swich(sumScore){
+		switch(sumScore){
 			case 0:
-				$('#result').text(omikuji[0]);
+				$('#omikujiResult').text(omikuji[0]);
+				console.log(omikuji[0]);
+				$('#hopeResult').text(hope[hopeScore][hopeResult]);
+				$('#loveResult').text(love[loveScore][loveResult]);
+				$('#studyResult').text(study[studyScore][studyResult]);
 				break;
 			case 1:
-				$('#result').text(omikuji[1]);
+				$('#omikujiResult').text(omikuji[1]);
+				console.log(omikuji[1]);
+				$('#hopeResult').text(hope[hopeScore][hopeResult]);
+				$('#loveResult').text(love[loveScore][loveResult]);
+				$('#studyResult').text(study[studyScore][studyResult]);
 				break;
 			case 2:
-				$('#result').text(omikuji[2]);
+				$('#omikujiResult').text(omikuji[2]);
+				console.log(omikuji[2]);
+				$('#hopeResult').text(hope[hopeScore][hopeResult]);
+				$('#loveResult').text(love[loveScore][loveResult]);
+				$('#studyResult').text(study[studyScore][studyResult]);
 				break;
 			case 3:
-				$('#result').text(omikuji[2]);
+				$('#omikujiResult').text(omikuji[2]);
+				console.log(omikuji[2]);
+				$('#hopeResult').text(hope[hopeScore][hopeResult]);
+				$('#loveResult').text(love[loveScore][loveResult]);
+				$('#studyResult').text(study[studyScore][studyResult]);
 				break;
 			case 4:
-				$('#result').text(omikuji[3]);
+				$('#omikujiResult').text(omikuji[3]);
+				console.log(omikuji[3]);
+				$('#hopeResult').text(hope[hopeScore][hopeResult]);
+				$('#loveResult').text(love[loveScore][loveResult]);
+				$('#studyResult').text(study[studyScore][studyResult]);
 				break;
 			case 5:
-				$('#result').text(omikuji[4]);
+				$('#omikujiResult').text(omikuji[4]);
+				console.log(omikuji[4]);
+				$('#hopeResult').text(hope[hopeScore][hopeResult]);
+				$('#loveResult').text(love[loveScore][loveResult]);
+				$('#studyResult').text(study[studyScore][studyResult]);
 				break;
 			case 6:
-				$('#result').text(omikuji[5]);
+				$('#omikujiResult').text(omikuji[5]);
+				console.log(omikuji[5]);
+				$('#hopeResult').text(hope[hopeScore][hopeResult]);
+				$('#loveResult').text(love[loveScore][loveResult]);
+				$('#studyResult').text(study[studyScore][studyResult]);
 				break;
 		}
 		
