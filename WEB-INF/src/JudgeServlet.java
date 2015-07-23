@@ -25,9 +25,8 @@ public class JudgeServlet extends HttpServlet{
          RankJudge judge = (RankJudge)InstanceCreator.create("judge");
          ArrayList<Double> ranking = judge.judge(Double.parseDouble(score), table);
 
-         // アプリケーション全体でデータを共有
-         ServletContext context = getServletContext();
-         context.setAttribute("ranking",ranking);
+         // リクエストスコープにセット
+         req.setAttribute("ranking",ranking);
 
          res.setContentType("text/html; charset=utf-8");
          // 結果をレスポンスする
