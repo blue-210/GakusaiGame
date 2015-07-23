@@ -11,8 +11,10 @@ var MAX_LEVEL = games.length-1,
 	dim = DIM_FIRST,
 	startTime = undefined, // スタートを押したときの時間を保存するもの
 	watchTimerID = undefined, // ゲームのタイマー
-	resultTime = 0; // ゲームの結果タイムを保存するもの
-
+	resultTime = 0, // ゲームの結果タイムを保存するもの
+	point = undefined;
+	
+	
 //スタートボタンが押されたらゲーム開始
 function gameStart(){
 	$('#startbtn').hide();//スタートボタンを隠す
@@ -48,13 +50,16 @@ function gameStart(){
 	//配列のうち一つをseikaiにする
 	var offset = Math.floor(Math.random() * chars.length);
 	chars.splice(offset, 1, seikai);
-
+	$('#s'+ (offset+1) ).attr("class", "point");
 
 	//span要素にそれらの配列の値をはめこむ
 	for(var i=1; i<=chars.length; i++){
 		$('#s'+i).text(chars[i-1]);
 		$('#s'+i).click(function(){
 			if($(this).text() == seikai){
+			
+				
+			
 				level++;
 				dim += DIM_DELTA;
 				if(level > MAX_LEVEL){
@@ -82,7 +87,6 @@ function startTimer() {
 
 function runTimer() {
 	resultTime = (((new Date()).getTime() - startTime) / 1000).toFixed(2);
-	console.log(resultTime);
 	$('#timer').text(resultTime);
 	watchTimerID = setTimeout(runTimer, 10);
 }
@@ -90,3 +94,5 @@ function runTimer() {
 $(function(){
 	$('#rule').modal('show');
 });
+
+
