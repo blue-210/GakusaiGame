@@ -1,5 +1,5 @@
 $(function(){
-   var SIZE = 5, // 出現する数字の数を指定する
+   var SIZE = 2, // 出現する数字の数を指定する
       BTN_NUMBER = SIZE*SIZE;
       $board = $("#board"), // ランダムな数字を入れるところ
       $timeCount = $("#timer"), // タイマーを表示するところ
@@ -78,14 +78,10 @@ function sendResult(time){
    $.ajax({
       url: 'http://localhost:1080/GakusaiGame/judge',
       type:'GET',
-      dataType: 'text',
-      timeout:1000,
-      success: function(data) {
-                  console.log(data);
-                  $('#result').load('http://localhost:1080/GakusaiGame/ranking');
-               },
-      error: function(data) {
-               alert("ng");
-               }
-   });
-}
+      dataType: 'json',
+      data:{
+         score:time,
+         table:'touchranking'
+      }
+   })
+};
