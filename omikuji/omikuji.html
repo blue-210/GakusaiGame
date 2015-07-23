@@ -8,6 +8,7 @@
       <script type="text/javascript" src="omikuji.js"></script>
       <!--BootStrap-->
       <link href="../BootStrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="omikuji.css" rel="stylesheet" type="text/css" />
    </head>
 
    <body>
@@ -20,12 +21,13 @@
             <div class="col-md-2"></div>
             <div class="col-md-8 text-center">
                <!--スタートボタン-->
-               <input type="button" id="getOmikuji" value="運勢を占う">
+               <input type="button" id="getOmikuji" value="運勢を占う"  onclick="getOmikuji();">
                <!-- 結果 -->
-               <p>あなたの運勢は・・・<span id="omikujiResult"></span></p>
-               <p>願い事：<span id="hopeResult"></span></p>
-               <p>恋愛：<span id="loveResult"></span></p>
-               <p>勉学：<span id="studyResult"></span></p>
+               <p><span id="omikujiResult" class="label label-warning"></span></p>
+               <br>
+               <p><span id="hopeResult"></span></p>
+               <p><span id="loveResult"></span></p>
+               <p><span id="studyResult"></span></p>
             </div>
             <div class="col-md-2"></div>
          </div>
