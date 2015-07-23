@@ -75,13 +75,5 @@ $(function(){
 });
 
 function sendResult(time){
-   $.ajax({
-      url: 'http://localhost:1080/GakusaiGame/judge',
-      type:'GET',
-      dataType: 'json',
-      data:{
-         score:time,
-         table:'touchranking'
-      }
-   })
+   $.get('http://localhost:1080/GakusaiGame/judge?score=2.22&table=touchranking');
 };
