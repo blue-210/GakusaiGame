@@ -25,8 +25,13 @@ public class JudgeServlet extends HttpServlet{
          RankJudge judge = (RankJudge)InstanceCreator.create("judge");
          ArrayList<Double> ranking = judge.judge(Double.parseDouble(score), table);
 
-         // リクエストスコープにセット
-         req.setAttribute("ranking",ranking);
+         // 受け取ったランキングに現在のユーザーのスコアが含まれているか
+         boolean isExisited = ranking.contains(score);
+
+         // アプリケーションスコープにセット
+         ServletContext context = getServletContext();
+         context.setAttribute("ranking",ranking);
+         context.setAttribute("score", socre);
 
          res.setContentType("text/html; charset=utf-8");
          // 結果をレスポンスする

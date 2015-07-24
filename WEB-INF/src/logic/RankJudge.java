@@ -47,7 +47,7 @@ public class RankJudge{
          }
 
          return ranking;
-      }else if(rank1 > score){
+      }else{
          // 1位よりも速かった場合
          // 順位を更新 socre→1位、1位→2位、2位→3位で更新
          cn.update(tableName,score,1);
@@ -58,8 +58,8 @@ public class RankJudge{
          for(Double i : ranking){
             System.out.println("In RankJudge rank1 < score "+i);
          }
+         // System.out.println("\n");
          return ranking;
       }
-      return ranking;
    }
 }
