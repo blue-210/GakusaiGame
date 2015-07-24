@@ -1,6 +1,3 @@
-$(function(){
-   $('form').hide();
-});
 
 $(function(){
    var SIZE = 2, // 出現する数字の数を指定する
@@ -68,7 +65,10 @@ $(function(){
             $('#board').hide();
             $('#timer').hide();
             $('#score').text('あなたの結果は'+resultTime+'秒です!!');
-            sendResult(resultTime);
+            $('#send').text('ランキングをみる');
+            $('#send').on('click',function(){
+               sendResult(resultTime);
+            });
         }
         currentNum++;
     }
@@ -79,10 +79,34 @@ $(function(){
    $('#rule').modal('show');
 });
 
+// function sendResult(time){
+//    $('#record').val(time);
+//    // alert($('#record').val());
+//    $('#tableName').val('touchranking');
+//    // alert($('#tableName').val());
+//    $('form').submit();
+// };
+
 function sendResult(time){
-   $('#record').val(time);
-   // alert($('#record').val());
-   $('#tableName').val('touchranking');
-   // alert($('#tableName').val());
-   $('form').submit();
+   $.ajax({
+      url: 'http://localhost:1080/GakusaiGame/judge',
+      type:'GET',
+      dataType: 'json',
+      data:{
+         score: time,
+         table: 'touchranking'
+      }
+   })
+   .done(function(data) {
+      console.log(data.score);
+      $(function(){
+         $('#ranking').modal('show');
+      });
+      $('#rank').text(data.score);
+      $('#ranking').modal('show');
+   })
+   .fail(function(data) {
+      console.log(data.score);
+      alert("ng");
+   });
 };

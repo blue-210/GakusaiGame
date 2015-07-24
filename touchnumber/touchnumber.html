@@ -27,13 +27,12 @@
             <!--数字の配置場所-->
             <div id="board"></div>
             <!-- スコアの表示先 -->
-            <div id="score" class="label label-primary"></div>
+            <label id="score" class="label label-primary"></label>
+            <button id="send" class="btn btn-info btn-lg">ランキング</button>
          </div>
          <div class="col-md-2"></div>
       </div>
    </div>
-   <!-- データ送信用 -->
-   <form action="../judge"><input id="record" name="score" type="hidden" value=""><input id="tableName"  name="table" type="hidden" value=""></form>
 
    <!-- モーダルの設定-->
    <div class="modal fade" id="rule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -50,6 +49,21 @@
        </div><!-- /.modal-content -->
      </div><!-- /.modal-dialog -->
    </div><!-- /.modal -->
-   
+
+   <!-- ランキング用モーダル -->
+   <div class="modal fade" id="ranking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">閉じる</span></button>
+           <h4 class="modal-title text-center text-primary" id="myModalLabel">ランキング</h4>
+         </div>
+         <div class="modal-body text-center">
+            <p id="rank"></p>
+         </div>
+       </div><!-- /.modal-content -->
+     </div><!-- /.modal-dialog -->
+   </div><!-- /.modal -->
+
 </body>
 </html>
