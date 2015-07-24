@@ -41,7 +41,7 @@ function getOmikuji(){
 	loveResult = Math.floor(Math.random() * love[loveScore].length);
 	studyResult = Math.floor(Math.random() * study[studyScore].length);
 	
-	sumScore = (hopeScore + loveScore + studyScore);	
+	sumScore = (hopeScore + loveScore + studyScore);
 	
 	//吉凶と各運勢の結果表示
 	switch(sumScore){
@@ -80,7 +80,7 @@ function getOmikuji(){
 			console.log(omikuji[5]);
 			showResult();
 			break;
-	}	
+	}
 }
 
 //各運勢の結果表示
