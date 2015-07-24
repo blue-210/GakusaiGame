@@ -1,0 +1,3 @@
+$(function(){
+   $('#ranking').modal('show');
+});
