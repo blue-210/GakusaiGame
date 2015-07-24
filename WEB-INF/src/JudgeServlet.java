@@ -5,12 +5,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.ServletContext;
 import javax.servlet.RequestDispatcher;
 
 import java.util.ArrayList;
 import di.InstanceCreator;
 import logic.*;
+
+import javax.servlet.ServletContext;
 
 public class JudgeServlet extends HttpServlet{
    public void doGet(HttpServletRequest req, HttpServletResponse res)
@@ -30,8 +31,9 @@ public class JudgeServlet extends HttpServlet{
 
          // アプリケーションスコープにセット
          ServletContext context = getServletContext();
-         context.setAttribute("ranking",ranking);
-         context.setAttribute("score", socre);
+         context.removeAttribute("ranking");
+         req.setAttribute("ranking",ranking);
+         req.setAttribute("score", score);
 
          res.setContentType("text/html; charset=utf-8");
          // 結果をレスポンスする

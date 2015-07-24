@@ -1,9 +1,12 @@
-* {
+body{
 	font-family: "‚l‚r –¾’©","MS Mincho";
+	background-repeat: no-repeat;
+	background-size:700px 300px;
+	background-position: center 113%;
 }
 
-#getOmikuji{
-	margin-bottom:20px;
+#results{
+	
 }
 
 #omikujiResult{

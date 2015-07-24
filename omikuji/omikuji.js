@@ -29,7 +29,14 @@ var hopeScore,
 	loveResult,
 	studyResult;
 
+$(document).ready( function(){
+	$('body').css('background-image', 'none'); 
+});
+
 function getOmikuji(){
+	//$('#imgOmikuji').fadeOut();
+	
+	$('body').css('background-image', 'url(../images/omikujiResult.jpg)');
 	
 	//各運勢の重みを算出
 	hopeScore = Math.floor(Math.random() * hope.length);
@@ -89,3 +96,21 @@ function showResult(){
 	$('#loveResult').text("恋愛："+love[loveScore][loveResult]);
 	$('#studyResult').text("勉学："+study[studyScore][studyResult]);
 }
+
+$(function(){
+        $("#imgOmikuji").rotate({ 
+    bind: 
+        { 
+            mouseover : function() { 
+                $(this).rotate({
+                    animateTo: 180
+                })
+            },
+            mouseout : function() { 
+                $(this).rotate({
+                    animateTo: 0
+                })
+            }
+        }    
+    });
+});

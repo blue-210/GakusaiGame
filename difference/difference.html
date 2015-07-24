@@ -5,10 +5,10 @@
 	<title>間違い探しゲーム</title>
 	<script type="text/javascript" src="../jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="../BootStrap/js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="defference.js"></script>
+	<script type="text/javascript" src="difference.js"></script>
 	<script type="text/javascript" src="pointer.js"></script>
 	<link href="../BootStrap/css/bootstrap.min.css" rel="stylesheet">
-	<link href="defference.css" rel="stylesheet" type="text/css" />
+	<link href="difference.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
 <center>
@@ -49,6 +49,10 @@
 
 	<!-- スコア表示 -->
 	<div id="score" class="label label-primary"></div>
+
+	<!-- データ送信用 -->
+	<form action="../judge"><input id="record" name="score" type="hidden" value=""><input id="tableName"  name="table" type="hidden" value=""></form>
+
 </center>
 </body>
 </html>

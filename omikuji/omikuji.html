@@ -4,6 +4,8 @@
       <meta charset="utf-8">
       <title>おみくじ</title>
       <script type="text/javascript" src="../jquery-2.1.4.js"></script>
+      <script type="text/javascript" src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
+      <script type="text/javascript" src="http://2chan-matome.publog.jp/rotate/jQueryRotateCompressed.js"></script>
       <script type="text/javascript" src="../BootStrap/js/bootstrap.min.js"></script>
       <script type="text/javascript" src="omikuji.js"></script>
       <!--BootStrap-->
@@ -21,14 +23,16 @@
             <div class="col-md-2"></div>
             <div class="col-md-8 text-center">
                <!--おみくじ画像　クリックで判定-->
-               <image id="imgOmikuji" src="../images/omikuji.jpg" onclick="getOmikuji();">
+               <image id="imgOmikuji" src="../images/omikuji.jpg" onclick="getOmikuji();" class="text-center">
                
                <!-- 結果 -->
-               <p><span id="omikujiResult" class="label label-warning"></span></p>
-               <br>
-               <p><span id="hopeResult"></span></p>
-               <p><span id="loveResult"></span></p>
-               <p><span id="studyResult"></span></p>
+               <div id="results">
+	               <p><span id="omikujiResult" class="label label-danger"></span></p>
+	               <br>
+	               <p><span id="hopeResult"></span></p>
+	               <p><span id="loveResult"></span></p>
+	               <p><span id="studyResult"></span></p>
+	           </div>
             </div>
             <div class="col-md-2"></div>
          </div>
