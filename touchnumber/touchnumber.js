@@ -13,7 +13,7 @@ $(function(){
       resultTime = 0; // ゲームの結果タイムを保存するもの
 
     $("#start").on("click", function() {
-        $timeCount.text("0.00");
+        $timeCount.text("00.000");
         $board.html("");
         currentNum = 1;
         clearTimeout(watchTimerID);
@@ -49,7 +49,7 @@ $(function(){
    }
 
    function runTimer() {
-       resultTime = (((new Date()).getTime() - startTime) / 1000).toFixed(2);
+       resultTime = (((new Date()).getTime() - startTime) / 10000).toFixed(3);
        $timeCount.text(resultTime);
        watchTimerID = setTimeout(runTimer, 10);
    }
@@ -59,7 +59,8 @@ $(function(){
 
     if (num == currentNum) {
         $(this).prop('disabled', true);
-        $(this).text('○');
+        $(this).html('<div class="img"><img src="../images/9014.jpg"/></div>');
+        $(this).imgLiquid();
 
         if (currentNum == BTN_NUMBER) {
             clearTimeout(watchTimerID);
