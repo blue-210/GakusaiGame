@@ -97,3 +97,20 @@ function showResult(){
 	$('#studyResult').text("勉学："+study[studyScore][studyResult]);
 }
 
+$(function(){
+        $("#imgOmikuji").rotate({ 
+    bind: 
+        { 
+            mouseover : function() { 
+                $(this).rotate({
+                    animateTo: 180
+                })
+            },
+            mouseout : function() { 
+                $(this).rotate({
+                    animateTo: 0
+                })
+            }
+        }    
+    });
+});
