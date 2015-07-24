@@ -21,3 +21,9 @@
 #studyResult{
 	font-size:30px;
 }
+
+#imgOmikuji{
+	width:150px;
+	margin-bottom:20px;
+	cursor:pointer;
+}
