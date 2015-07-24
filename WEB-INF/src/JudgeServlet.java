@@ -11,6 +11,8 @@ import java.util.ArrayList;
 import di.InstanceCreator;
 import logic.*;
 
+import javax.servlet.ServletContext;
+
 public class JudgeServlet extends HttpServlet{
    public void doGet(HttpServletRequest req, HttpServletResponse res)
       throws IOException, ServletException{
@@ -28,6 +30,8 @@ public class JudgeServlet extends HttpServlet{
          boolean isExisited = ranking.contains(score);
 
          // アプリケーションスコープにセット
+         ServletContext context = getServletContext();
+         context.removeAttribute("ranking");
          req.setAttribute("ranking",ranking);
          req.setAttribute("score", score);
 
