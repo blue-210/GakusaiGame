@@ -11,15 +11,12 @@ import java.util.ArrayList;
 import di.InstanceCreator;
 import logic.*;
 
-import javax.servlet.ServletContext;
-
 public class JudgeServlet extends HttpServlet{
    public void doGet(HttpServletRequest req, HttpServletResponse res)
       throws IOException, ServletException{
          req.setCharacterEncoding("utf-8");
          // ajaxで送ったデータを取得する
          String score = req.getParameter("score");
-         System.out.println("In JudgeServlet score "+score);
          String table = req.getParameter("table");
 
          // 受け取ったスコアを判定して、更新されたデータを返す。
@@ -30,8 +27,6 @@ public class JudgeServlet extends HttpServlet{
          boolean isExisited = ranking.contains(score);
 
          // アプリケーションスコープにセット
-         ServletContext context = getServletContext();
-         context.removeAttribute("ranking");
          req.setAttribute("ranking",ranking);
          req.setAttribute("score", score);
 
