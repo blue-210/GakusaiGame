@@ -70,16 +70,17 @@ public class OracleConnector extends Connector{
 
    public void update(String tableName, double score, int rank){
       String sql = "UPDATE ";
-      sql = sql.concat(tableName+" SET score=?, rank=?");
-      System.out.println(sql);
+      sql = sql.concat(tableName+" SET score=?, rank=? WHERE rank=?");
       try{
          this.connect();
 
          PreparedStatement pstm = conn.prepareStatement(sql);
          pstm.setDouble(1,score);
          pstm.setInt(2,rank);
+         pstm.setInt(3,rank);
 
          pstm.executeUpdate();
+         conn.commit();
 
          pstm.close();
          rs.close();

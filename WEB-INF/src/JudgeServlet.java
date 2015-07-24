@@ -15,10 +15,10 @@ import logic.*;
 public class JudgeServlet extends HttpServlet{
    public void doGet(HttpServletRequest req, HttpServletResponse res)
       throws IOException, ServletException{
-         System.out.println("in JudgeServlet");
          req.setCharacterEncoding("utf-8");
          // ajaxで送ったデータを取得する
          String score = req.getParameter("score");
+         System.out.println("In JudgeServlet score "+score);
          String table = req.getParameter("table");
 
          // 受け取ったスコアを判定して、更新されたデータを返す。

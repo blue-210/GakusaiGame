@@ -12,8 +12,8 @@
 <body>
    <P>テスト</p>
    <table>
-      <c:forEach var="rank" items="${ranking}">
-         <tr><td>${rank}</td></tr>
+      <c:forEach var="rank" items="${ranking}" varStatus="no">
+         <tr><td>${no.count}位${rank}</td></tr>
       </c:forEach>
    </table>
 </body>
