@@ -49,7 +49,7 @@ $(function(){
    }
 
    function runTimer() {
-       resultTime = (((new Date()).getTime() - startTime) / 10000).toFixed(3);
+       resultTime = (((new Date()).getTime() - startTime) / 1000).toFixed(2);
        $timeCount.text(resultTime);
        watchTimerID = setTimeout(runTimer, 10);
    }

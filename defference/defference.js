@@ -1,3 +1,7 @@
+$(function(){
+   $('form').hide();
+});
+
 var level = 0;
 var games = [
 	['大 ', '太 '],
@@ -13,15 +17,15 @@ var MAX_LEVEL = games.length-1,
 	watchTimerID = undefined, // ゲームのタイマー
 	resultTime = 0, // ゲームの結果タイムを保存するもの
 	point = undefined;
-	
-	
+
+
 //スタートボタンが押されたらゲーム開始
 function gameStart(){
 	$('#startbtn').hide();//スタートボタンを隠す
 
 	var dummy = games[level][0];//ダミーの文字
 	var seikai = games[level][1];//正解の文字
-	
+
 	//最初のレベルのとき
 	if(level == 0){
 		clearTimeout(watchTimerID);
@@ -57,9 +61,9 @@ function gameStart(){
 		$('#s'+i).text(chars[i-1]);
 		$('#s'+i).click(function(){
 			if($(this).text() == seikai){
-			
-				
-			
+
+
+
 				level++;
 				dim += DIM_DELTA;
 				if(level > MAX_LEVEL){
@@ -68,6 +72,7 @@ function gameStart(){
 					$('#cells').hide();
 					$('#timer').hide();
 					$('#score').text('あなたの結果は '+resultTime+'秒です!!');
+					sendResult(resultTime);
 					level = 0;
 					dim = DIM_FIRST;
 					return false;
@@ -95,4 +100,8 @@ $(function(){
 	$('#rule').modal('show');
 });
 
-
+function sendResult(time){
+   $('#record').val(time);
+   $('#tableName').val('diffranking');
+   $('form').submit();
+};
