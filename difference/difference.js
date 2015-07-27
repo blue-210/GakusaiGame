@@ -62,8 +62,6 @@ function gameStart(){
 		$('#s'+i).click(function(){
 			if($(this).text() == seikai){
 
-
-
 				level++;
 				dim += DIM_DELTA;
 				if(level > MAX_LEVEL){
@@ -71,7 +69,6 @@ function gameStart(){
 					$('#level').hide();
 					$('#cells').hide();
 					$('#timer').hide();
-					$('#score').text('あなたの結果は '+resultTime+'秒です!!');
 					sendResult(resultTime);
 					level = 0;
 					dim = DIM_FIRST;
@@ -101,7 +98,26 @@ $(function(){
 });
 
 function sendResult(time){
-   $('#record').val(time);
-   $('#tableName').val('diffranking');
-   $('form').submit();
+   $.ajax({
+      url: 'http://localhost:1080/GakusaiGame/judge',
+      type:'GET',
+      dataType: 'json',
+      data:{
+         score: time,
+         table: 'diffranking'
+      }
+   })
+   .done(function(data) {
+      console.log(data.currentRank);
+      $('#rank>p').remove();
+      $('#rank').append("<p>"+data.rank1+"</p>");
+      $('#rank').append("<p>"+data.rank2+"</p>");
+      $('#rank').append("<p>"+data.rank3+"</p>");
+      $('#rank').append("<p>"+data.outrank+"</p>");
+      $('#ranking').modal('show');
+   })
+   .fail(function(data) {
+      console.log(data.currentScore);
+      alert("ng");
+   });
 };

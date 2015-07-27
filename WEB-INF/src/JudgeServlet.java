@@ -16,23 +16,33 @@ public class JudgeServlet extends HttpServlet{
       throws IOException, ServletException{
          req.setCharacterEncoding("utf-8");
          // ajaxで送ったデータを取得する
-         String score = req.getParameter("score");
+         String currentScore = req.getParameter("score");
          String table = req.getParameter("table");
+         System.out.println(table);
 
-         // 受け取ったスコアを判定して、更新されたデータを返す。
+         // 受け取ったスコアを判定して、更新されたデータを取得。
          RankJudge judge = (RankJudge)InstanceCreator.create("judge");
-         ArrayList<Double> ranking = judge.judge(Double.parseDouble(score), table);
+         ArrayList<Double> ranking = judge.judge(Double.parseDouble(currentScore), table);
+
+         // 順位ごとのscore用変数の初期化
+         double rank1 = ranking.get(0);
+         double rank2 = ranking.get(1);
+         double rank3 = ranking.get(2);
 
          // 受け取ったランキングに現在のユーザーのスコアが含まれているか
-         boolean isExisited = ranking.contains(score);
+         boolean isExisited = ranking.contains(currentScore);
 
-         // アプリケーションスコープにセット
-         req.setAttribute("ranking",ranking);
-         req.setAttribute("score", score);
+         int currentRank = 0;
+         if(isExisited){
+            // 含まれていた場合、何位かを確認する
+            currentRank = ranking.indexOf(currentScore);
+            currentRank += 1;
+         }
 
-         res.setContentType("text/html; charset=utf-8");
-         // 結果をレスポンスする
-         RequestDispatcher dispatcher = req.getRequestDispatcher("ranking");
-         dispatcher.forward(req,res);
+         String resJson = "{\"rank1\":"+rank1+",\"rank2\":"+rank2+",\"rank3\":"+rank3+",\"outrank\":"+currentScore+",\"currentRank\":"+currentRank+"}";
+         System.out.println(resJson);
+         res.setContentType("application/json; charset=utf-8");
+         PrintWriter out = res.getWriter();
+         out.print(resJson);
    }
 }
