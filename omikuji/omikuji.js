@@ -34,7 +34,7 @@ $(document).ready( function(){
 });
 
 function getOmikuji(){
-	//$('#imgOmikuji').fadeOut();
+	
 	
 	$('body').css('background-image', 'url(../images/omikujiResult.jpg)');
 	
@@ -97,20 +97,13 @@ function showResult(){
 	$('#studyResult').text("勉学："+study[studyScore][studyResult]);
 }
 
+
 $(function(){
-        $("#imgOmikuji").rotate({ 
-    bind: 
-        { 
-            mouseover : function() { 
-                $(this).rotate({
-                    animateTo: 180
-                })
-            },
-            mouseout : function() { 
-                $(this).rotate({
-                    animateTo: 0
-                })
-            }
-        }    
-    });
+	$('#imgOmikuji').on('click',function(){
+		$('#imgOmikuji').addClass('imgAnime');
+		//$('#imgOmkuji').removeClass('imgAnime');
+		$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
+		getOmikuji();
+	});
 });
+

@@ -30,3 +30,21 @@ body{
 	margin-bottom:20px;
 	cursor:pointer;
 }
+
+.imgAnime{
+	animation: rotate 2s;            //「rotate」を1秒かけて実行
+    animation-iteration-count: 1;    //実行回数（infinite=無制限）
+    /* webkit用animation */
+    -webkit-animation: rotate 2s;
+    -webkit-animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(180deg); } 
+}
+@-webkit-keyframes rotate {
+     /* webkit用keyframes */ 
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(180deg); }
+}
