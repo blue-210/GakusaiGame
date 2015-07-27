@@ -10,7 +10,7 @@ $(function(){
       resultTime = 0; // ゲームの結果タイムを保存するもの
 
     $("#start").on("click", function() {
-        $timeCount.text("00.000");
+        $timeCount.text("0.00");
         $board.html("");
         currentNum = 1;
         clearTimeout(watchTimerID);
