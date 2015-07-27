@@ -101,7 +101,26 @@ $(function(){
 });
 
 function sendResult(time){
-   $('#record').val(time);
-   $('#tableName').val('diffranking');
-   $('form').submit();
+   $.ajax({
+      url: 'http://localhost:1080/GakusaiGame/judge',
+      type:'GET',
+      dataType: 'json',
+      data:{
+         score: time,
+         table: 'diffranking'
+      }
+   })
+   .done(function(data) {
+      console.log(data.currentRank);
+      $('#rank>p').remove();
+      $('#rank').append("<p>"+data.rank1+"</p>");
+      $('#rank').append("<p>"+data.rank2+"</p>");
+      $('#rank').append("<p>"+data.rank3+"</p>");
+      $('#rank').append("<p>"+data.outrank+"</p>");
+      $('#ranking').modal('show');
+   })
+   .fail(function(data) {
+      console.log(data.currentScore);
+      alert("ng");
+   });
 };
