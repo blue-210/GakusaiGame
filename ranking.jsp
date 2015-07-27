@@ -25,7 +25,10 @@
          <div class="modal-body text-center" id="record">
             <table class="table">
              <tr><th>RANK</th><th>SCORE</th></th>
-              <c:forEach var="rank" items="${ranking}" varStatus="no">
+              <c:choose>
+               　　<c:when test="${}"></c:when>
+               　　<c:otherwise></c:otherwise>
+               </c:choose>
                  <tr><td>${no.count}</td><td>${rank}</td></tr>
               </c:forEach>
             </table>
