@@ -62,8 +62,6 @@ function gameStart(){
 		$('#s'+i).click(function(){
 			if($(this).text() == seikai){
 
-
-
 				level++;
 				dim += DIM_DELTA;
 				if(level > MAX_LEVEL){
@@ -71,7 +69,6 @@ function gameStart(){
 					$('#level').hide();
 					$('#cells').hide();
 					$('#timer').hide();
-					$('#score').text('あなたの結果は '+resultTime+'秒です!!');
 					sendResult(resultTime);
 					level = 0;
 					dim = DIM_FIRST;

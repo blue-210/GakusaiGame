@@ -64,11 +64,7 @@ $(function(){
             $('#start').hide();
             $('#board').hide();
             $('#timer').hide();
-            $('#score').text('あなたの結果は'+resultTime+'秒です!!');
-            $('#send').text('ランキングをみる');
-            $('#send').on('click',function(){
-               sendResult(resultTime);
-            });
+            sendResult(resultTime);
         }
         currentNum++;
     }
