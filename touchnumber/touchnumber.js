@@ -98,15 +98,16 @@ function sendResult(time){
       }
    })
    .done(function(data) {
-      console.log(data.score);
-      $(function(){
-         $('#ranking').modal('show');
-      });
-      $('#rank').text(data.score);
+      console.log(data.currentRank);
+      $('#rank>p').remove();
+      $('#rank').append("<p>"+data.rank1+"</p>");
+      $('#rank').append("<p>"+data.rank2+"</p>");
+      $('#rank').append("<p>"+data.rank3+"</p>");
+      $('#rank').append("<p>"+data.outrank+"</p>");
       $('#ranking').modal('show');
    })
    .fail(function(data) {
-      console.log(data.score);
+      console.log(data.currentScore);
       alert("ng");
    });
 };
