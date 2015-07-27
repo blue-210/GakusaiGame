@@ -15,3 +15,12 @@ Tomcat
 <Context path="/GakusaiGame" reloadable="true" docBase="C:\GitHub\GakusaiGame" debug="0">
    <Resource name="jdbc/ora" auth="Container" type="javax.sql.DataSource" username="gakusai" password="game" driverClassName="oracle.jdbc.driver.OracleDriver" url="jdbc:oracle:thin:[情報処理科サーバ]:1521:orcl" maxActive="5" maxIdle="5" maxWait="10000" removeAbandoned="true" removeAbandonedTimeout="60" logAbandoned="true"/>
 </Context>
+
+jQuery UI
+
+<link type="text/css" rel="stylesheet"
+  href="http://code.jquery.com/ui/1.10.3/themes/cupertino/jquery-ui.min.css" />
+<script type="text/javascript"
+  src="http://code.jquery.com/jquery-1.9.1.min.js"></script>*1
+<script type="text/javascript"
+  src="http://code.jquery.com/ui/1.10.3/jquery-ui.min.js"></script>
