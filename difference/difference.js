@@ -1,7 +1,3 @@
-$(function(){
-   $('form').hide();
-});
-
 var level = 0;
 var games = [
 	['大 ', '太 '],
@@ -21,7 +17,9 @@ var MAX_LEVEL = games.length-1,
 
 //スタートボタンが押されたらゲーム開始
 function gameStart(){
+   MAX_LEVEL = games.length-1
 	$('#startbtn').hide();//スタートボタンを隠す
+   $('#cells').show();
 
 	var dummy = games[level][0];//ダミーの文字
 	var seikai = games[level][1];//正解の文字
@@ -109,12 +107,47 @@ function sendResult(time){
    })
    .done(function(data) {
       console.log(data.currentRank);
-      $('#rank>p').remove();
-      $('#rank').append("<p>"+data.rank1+"</p>");
-      $('#rank').append("<p>"+data.rank2+"</p>");
-      $('#rank').append("<p>"+data.rank3+"</p>");
-      $('#rank').append("<p>"+data.outrank+"</p>");
-      $('#ranking').modal('show');
+      $('#rank>table>').remove();
+      $('#rank>table').append('<th class="text-center">順位</th><th class="text-center">タイム</th></tr>');
+
+      // 直近のスコアを強調する処理
+      if(data.currentRank == 1){
+        // 直近のスコアが1位だった場合
+        $('#rank>table').append("<tr class=\"blinking text-center\"><td>1位</td><td>"+data.rank1+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
+      }else if(data.currentRank == 2){
+        // 直近のスコアが2位だった場合
+        $('#rank>table').append("<tr class=\"text-center\"><td>1位</td>"+data.rank1+"</td></tr>");
+        $('#rank>table').append("<tr class=\"blinking text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
+      }else if(data.currentRank == 3){
+        // 直近のスコアが2位だった場合
+        $('#rank>table').append("<tr class=\"text-center\"><td>1位</td><td>"+data.rank1+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
+        $('#rank>table').append("<tr class=\"blinking text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
+      }else{
+        $('#rank>table').append("<tr class=\"text-center\"><td>1位</td><td>"+data.rank1+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
+        $('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
+        $('#rank>table').append("<tr class=\"blinking text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
+      }
+
+      $('.modal-footer > button:first').on('click',function(){
+         clearTimeout(watchTimerID);
+        $('#timer').text('0.00');
+        $('#startbtn').show();
+        $('#timer').show();
+      });
+
+      $('.modal-footer > button:last').on('click',function(){
+          window.location.href = '../index.html';
+      });
+
+      $('#ranking').modal({backdrop: false});
    })
    .fail(function(data) {
       console.log(data.currentScore);
