@@ -47,7 +47,7 @@ public class OracleConnector extends Connector{
 
    public ArrayList<Double> select(String tableName){
       String sql = "SELECT score FROM ";
-      sql = sql.concat(tableName+" WHERE rank BETWEEN 1 AND 3 ORDER BY rank");
+      sql = sql.concat(tableName+" WHERE rownum <= 4 ORDER BY rank");
 
       try{
          this.connect();
@@ -55,6 +55,7 @@ public class OracleConnector extends Connector{
          PreparedStatement pstm = conn.prepareStatement(sql);
          rs = pstm.executeQuery();
 
+         ranking.clear();
          while(rs.next()){
             ranking.add(rs.getDouble("score"));
          }
