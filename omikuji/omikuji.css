@@ -2,7 +2,7 @@ body{
 	font-family: "‚l‚r –¾’©","MS Mincho";
 	background-repeat: no-repeat;
 	background-size:700px 300px;
-	background-position: center 113%;
+	background-position: center 110%;
 }
 
 #results{
@@ -25,8 +25,13 @@ body{
 	font-size:30px;
 }
 
-#imgOmikuji{
+#imgKannushi{
 	width:150px;
+	margin-bottom:20px;
+}
+
+#imgOmikuji{
+	width:100px;
 	margin-bottom:20px;
 	cursor:pointer;
 }

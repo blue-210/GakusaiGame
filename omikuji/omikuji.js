@@ -102,7 +102,7 @@ $(function(){
 	$('#imgOmikuji').on('click',function(){
 		$('#imgOmikuji').addClass('imgAnime');
 		//$('#imgOmkuji').removeClass('imgAnime');
-		$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
+		//$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
 		getOmikuji();
 	});
 });
