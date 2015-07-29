@@ -22,7 +22,7 @@ public class RankJudge{
       double rank4 = ranking.get(3);
 
       if(score > rank3){
-         // 3位より時間がかかっていた場合
+         // 3位より時間がかかっていた場合,4位にする。
          cn.update(tableName, score, 4);
          return ranking;
       }else if(score > rank2){
