@@ -14,14 +14,4 @@
 		<servlet-name>judge</servlet-name>
 		<url-pattern>/judge</url-pattern>
 	</servlet-mapping>
-
-   <servlet>
-      <servlet-name>ranking</servlet-name>
-      <jsp-file>/ranking.jsp</jsp-file>
-   </servlet>
-   <servlet-mapping>
-      <servlet-name>ranking</servlet-name>
-      <url-pattern>/ranking</url-pattern>
-   </servlet-mapping>
-
 </web-app>
