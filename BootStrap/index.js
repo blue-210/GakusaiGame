@@ -1,4 +1,3 @@
 $(function(){
-   $('img').css()
-   $('img').imgLiquid();
+   $('img').addClass('img');
 })
