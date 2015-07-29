@@ -99,11 +99,18 @@ function showResult(){
 
 
 $(function(){
-	$('#imgOmikuji').on('click',function(){
+	$('#imgOmikuji').hover(function(){
 		$('#imgOmikuji').addClass('imgAnime');
-		//$('#imgOmkuji').removeClass('imgAnime');
-		//$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
-		getOmikuji();
+
+		
 	});
 });
+
+function start(){
+	$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
+	$('#imgOmkuji').attr('onclick','');
+	//$('#imgOmikuji').html('<image src="../images/omikuji_after.jpg">');
+	getOmikuji();
+}
+
 
