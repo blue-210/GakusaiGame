@@ -1,8 +1,14 @@
 body{
-	font-family: "‚l‚r –¾’©","MS Mincho";
+	font-family: "ãƒ’ãƒ©ã‚®ãƒæ˜æœ ProN W6",
+   				 "HiraMinProN-W6",
+   				 "HGæ˜æœE",
+   				 "ï¼­ï¼³ ï¼°æ˜æœ",
+   				 "MS PMincho",
+   				 "MS æ˜æœ",
+   				 serif;
 	background-repeat: no-repeat;
 	background-size:700px 300px;
-	background-position: center 110%;
+	background-position: center 113%;
 }
 
 #results{
@@ -26,21 +32,30 @@ body{
 }
 
 #imgKannushi{
-	width:150px;
+	height:300px;
 	margin-bottom:20px;
+	position: absolute;
+	left:100px;
+}
+
+#imgUnsei{
+	width:250px;
+	margin-bottom:20px;
+	position: absolute;
+	right:10px;
 }
 
 #imgOmikuji{
 	width:100px;
-	margin-bottom:20px;
+	margin-bottom:100px;
 	cursor:pointer;
 }
 
 .imgAnime{
-	animation: rotate 2s;            //urotatev‚ğ1•b‚©‚¯‚ÄÀs
-    animation-iteration-count: 1;    //Às‰ñ”iinfinite=–³§ŒÀj
-    /* webkit—panimation */
-    -webkit-animation: rotate 2s;
+	animation: rotate 1s;            
+    animation-iteration-count: 1;    
+    /* webkitâ€”panimation */
+    -webkit-animation: rotate 1s;
     -webkit-animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
@@ -49,7 +64,7 @@ body{
     100% { transform: rotate(180deg); } 
 }
 @-webkit-keyframes rotate {
-     /* webkit—pkeyframes */ 
+     /* webkitâ€”pkeyframes */ 
     0% { -webkit-transform: rotate(0deg); }
     100% { -webkit-transform: rotate(180deg); }
 }
