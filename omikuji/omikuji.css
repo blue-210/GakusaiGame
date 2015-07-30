@@ -1,8 +1,14 @@
 body{
-	font-family: "‚l‚r –¾’©","MS Mincho";
+	font-family: "ヒラギノ明朝 ProN W6",
+   				 "HiraMinProN-W6",
+   				 "HG明朝E",
+   				 "ＭＳ Ｐ明朝",
+   				 "MS PMincho",
+   				 "MS 明朝",
+   				 serif;
 	background-repeat: no-repeat;
 	background-size:700px 300px;
-	background-position: center 110%;
+	background-position: center 113%;
 }
 
 #results{
@@ -26,19 +32,22 @@ body{
 }
 
 #imgKannushi{
-	width:150px;
+	height:300px;
 	margin-bottom:20px;
+	position: absolute;
+	left:100px;
 }
 
 #imgUnsei{
 	width:250px;
 	margin-bottom:20px;
 	position: absolute;
-	left:10px;
+	right:10px;
 }
 
 #imgOmikuji{
 	width:100px;
+	margin-bottom:100px;
 	cursor:pointer;
 }
 
