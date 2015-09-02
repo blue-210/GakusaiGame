@@ -1,5 +1,5 @@
 $(document).ready(function(){
-	$(".point").pointer();
+	$('.point').pointer();
 });
 
 (function($){
