@@ -7,35 +7,32 @@ body{
    				 "MS 明朝",
    				 serif;
 	background-repeat: no-repeat;
-	background-size:700px 300px;
-	background-position: center 113%;
+	background-size:800px 300px;
+	background-position: center 125%;
 }
 
-#results{
-	
-}
+
 
 #omikujiResult{
 	font-size:30px;
 }
 
-#hopeResult{
-	font-size:30px;
-}
-
-#loveResult{
-	font-size:30px;
-}
-
-#studyResult{
-	font-size:30px;
+#results{
+	font-size:20px;
 }
 
 #imgKannushi{
 	height:300px;
 	margin-bottom:20px;
 	position: absolute;
-	left:100px;
+	left:20px;
+}
+
+#imgSayKannushi{
+	height:200px;
+	margin-bottom:20px;
+	position: absolute;
+	left:250px;
 }
 
 #imgUnsei{
