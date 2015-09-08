@@ -59,6 +59,7 @@ $(function(){
        var num = $(this).text();
 
        if (num == currentNum) {
+          soundCorrect();
            $(this).prop('disabled', true);
            $(this).html('<div class="img"><img src="../images/9014.jpg"/></div>');
            $(this).imgLiquid();
@@ -72,9 +73,27 @@ $(function(){
            }
            currentNum++;
       }else{
-         sound();
+         $(this).addClass("btn-danger");
+         soundIncorrect();
+         setTimeout(function(){
+            console.log($(this).text());
+            $(this).removeClass("btn-danger");
+         },300);
       }
     }
+
+    function soundIncorrect(){
+      //音声ファイルを巻き戻す(再生位置[秒]を0に設定する)
+      document.getElementById("incorrect").currentTime = 0;
+      $("#incorrect").get(0).play();
+   }
+
+   function soundCorrect(){
+      //音声ファイルを巻き戻す(再生位置[秒]を0に設定する)
+      document.getElementById("correct").currentTime = 0;
+     $("#correct").get(0).play();
+  }
+
 
     function sendResult(time){
        $.ajax({
@@ -134,8 +153,4 @@ $(function(){
           alert("ng");
        });
     };
-
-    function sound(){
-      $("#sound-file").get(0).play();
-   }
 });
