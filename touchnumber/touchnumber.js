@@ -71,7 +71,9 @@ $(function(){
                sendResult(resultTime);
            }
            currentNum++;
-       }
+      }else{
+         sound();
+      }
     }
 
     function sendResult(time){
@@ -132,4 +134,8 @@ $(function(){
           alert("ng");
        });
     };
+
+    function sound(){
+      $("#sound-file").get(0).play();
+   }
 });

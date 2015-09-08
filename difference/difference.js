@@ -74,10 +74,15 @@ function gameStart(){
 				}
 
 				gameStart();
+			}else{
+				sound();
 			}
-			else alert("ちがうよ？");
 		});
 	}
+}
+
+function sound(){
+  $("#sound-file").get(0).play();
 }
 
 function startTimer() {
@@ -153,4 +158,5 @@ function sendResult(time){
       console.log(data.currentScore);
       alert("ng");
    });
+
 };
