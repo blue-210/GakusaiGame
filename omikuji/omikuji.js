@@ -14,7 +14,8 @@ var img = [ "../images/kannushi_daikichi.jpg",
 var hope = [
 	[	//良い結果
 		"期待以上の結果が得られるでしょう。", 
-		"あなたの思い通りになるでしょう。"
+		"あなたの思い通りになるでしょう。",
+		"さあ 願いを 言え、どんな願いもひとつだけかなえてえてやろう..."
 	], 
 	[	//普通の結果
 		"辛抱強く願い続ければ叶うでしょう。",
@@ -22,7 +23,8 @@ var hope = [
 		"善意を尽くしていれば、いづれ自分にも返ってくるでしょう。"
 	], 
 	[	//悪い結果
-		"しばらく叶うことはないようです。今は自分を磨きましょう。"
+		"しばらく叶うことはないようです。今は自分を磨きましょう。",
+		"神にお願いする前に、部屋のタコ足配線なんとかしたら？"
 	] 
 ]; 
 
@@ -37,9 +39,13 @@ var love = [
 		"まだ行動の時期ではありません。時が来るのを待ちましょう。",
 		"なにかしらの進展が見られるでしょう。",
 		"実は真性のドSの人はMの人を求めないんだ。" 
-	]
+	],
 	[	//悪い結果
-		"恋愛だけが人生の全てではありません。"
+		"恋愛だけが人生の全てではありません。",
+		"君の家、鏡ある？",
+		"高望みしすぎじゃない？",
+		"失恋のたびにアドレス変えるの、学習したら？",
+		"ゼクシィとは無縁の人生でしょう。"
 	]
 ]; 
 
@@ -48,19 +54,31 @@ var study = [
 	[	//良い結果
 		"今とても脳が活性化しています", 
 		"その調子で努力すれば、目標達成はすぐそこです。",
-		"いつやるか。。。今でしょ！"
+		"いつやるか。。。今でしょ！",
+		"STAP細胞の未来はあなたに託されました。"
 	], 
 	[	//普通の結果
 		"努力した分だけ、結果がついてきます。",
 		"無理せずコツコツ積み重ねていきましょう。",
 		"予習復習を忘れずに。",
-		"英語なんて言葉なんだ。こんなものやれば誰だってできるようになる！"
+		"英語なんて言葉なんだ。こんなものやれば誰だってできるようになる。"
 	], 
 	[	//悪い結果
 		"もう一度勉強の仕方を見直してみましょう",
-		"基礎の基礎が怖いってことを今日、何度も言っときます。"
+		"基礎の基礎が怖いってことを今日、何度も言っときます。",
+		"先生のこと、お母さんって言っちゃうでしょう。",
+		"消しゴムの角使ったくらいで怒るなよ。"
 	] 
-]; 
+];
+
+var comment = [
+	"大吉だね。<br>だからって調子に乗るなよ。",
+	"中吉だね。<br>うん、いい方。全然いい方だよ。",
+	"小吉だね。<br>コメントに困る結果だよ。。。",
+	"末吉だね。<br>中の下。その程度の人間ってこと。",
+	"凶だね。<br>あ～あ",
+	"大凶だね。ご愁傷さま。"
+]
 
 var hopeScore,
 	loveScore,
@@ -96,42 +114,49 @@ function getOmikuji(){
 		case 0:
 			$('#omikujiResult').text(omikuji[0]);
 			console.log(omikuji[0]);
+			$('#kannushiComment').html(comment[0]);
 			showResult();
 			$('#imgKannushi').attr('src',img[0]);
 			break;
 		case 1:
 			$('#omikujiResult').text(omikuji[1]);
 			console.log(omikuji[1]);
+			$('#kannushiComment').html(comment[1]);
 			showResult();
 			$('#imgKannushi').attr('src',img[1]);
 			break;
 		case 2:
 			$('#omikujiResult').text(omikuji[2]);
 			console.log(omikuji[2]);
+			$('#kannushiComment').html(comment[2]);
 			showResult();
 			$('#imgKannushi').attr('src',img[2]);
 			break;
 		case 3:
 			$('#omikujiResult').text(omikuji[2]);
 			console.log(omikuji[2]);
+			$('#kannushiComment').html(comment[2]);
 			showResult();
 			$('#imgKannushi').attr('src',img[2]);
 			break;
 		case 4:
 			$('#omikujiResult').text(omikuji[3]);
 			console.log(omikuji[3]);
+			$('#kannushiComment').html(comment[3]);
 			showResult();
 			$('#imgKannushi').attr('src',img[3]);
 			break;
 		case 5:
 			$('#omikujiResult').text(omikuji[4]);
 			console.log(omikuji[4]);
+			$('#kannushiComment').html(comment[4]);
 			showResult();
 			$('#imgKannushi').attr('src',img[4]);
 			break;
 		case 6:
 			$('#omikujiResult').text(omikuji[5]);
 			console.log(omikuji[5]);
+			$('#kannushiComment').html(comment[5]);
 			showResult();
 			$('#imgKannushi').attr('src',img[5]);
 			break;

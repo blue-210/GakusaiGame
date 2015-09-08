@@ -8,7 +8,7 @@ body{
    				 serif;
 	background-repeat: no-repeat;
 	background-size:845px 300px;
-	background-position: center 125%;
+	background-position: center 130%;
 }
 
 
@@ -33,6 +33,13 @@ body{
 	margin-bottom:20px;
 	position: absolute;
 	left:250px;
+}
+
+#kannushiComment{
+	position: absolute; 
+	top: 130px; 
+	left: 300px; 
+	width: 320px;"
 }
 
 #imgUnsei{
