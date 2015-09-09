@@ -59,7 +59,7 @@ function gameStart(){
 		$('#s'+i).text(chars[i-1]);
 		$('#s'+i).click(function(){
 			if($(this).text() == seikai){
-
+				soundCorrect();
 				level++;
 				dim += DIM_DELTA;
 				if(level > MAX_LEVEL){
@@ -75,14 +75,20 @@ function gameStart(){
 
 				gameStart();
 			}else{
-				sound();
+				soundIncorrect();
 			}
 		});
 	}
 }
 
-function sound(){
-  $("#sound-file").get(0).play();
+function soundIncorrect(){
+      document.getElementById("incorrect").currentTime = 0;
+      $("#incorrect").get(0).play();
+   }
+
+function soundCorrect(){
+	document.getElementById("correct").currentTime = 0;
+	$("#correct").get(0).play();
 }
 
 function startTimer() {
