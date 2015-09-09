@@ -24,7 +24,7 @@ var hope = [
 	], 
 	[	//悪い結果
 		"しばらく叶うことはないようです。今は自分を磨きましょう。",
-		"神にお願いする前に、部屋のタコ足配線なんとかしたら？"
+		"神にお願いする前に、やることがあるんじゃない？"
 	] 
 ]; 
 
@@ -102,21 +102,22 @@ function getOmikuji(){
 	loveScore = getScore();//Math.floor(Math.random() * love.length);
 	studyScore = getScore();//Math.floor(Math.random() * study.length);
 	
-	//結果の良し悪しから回答文を決める
+	//各運勢の良し悪しから回答文を決める
 	hopeResult = Math.floor(Math.random() * hope[hopeScore].length);
 	loveResult = Math.floor(Math.random() * love[loveScore].length);
 	studyResult = Math.floor(Math.random() * study[studyScore].length);
 	
+	//各運勢の良し悪しから吉凶を割り出す
 	sumScore = (hopeScore + loveScore + studyScore);
 	
 	//吉凶と各運勢の結果表示
 	switch(sumScore){
 		case 0:
-			$('#omikujiResult').text(omikuji[0]);
+			$('#omikujiResult').text(omikuji[0]);//吉凶
 			console.log(omikuji[0]);
-			$('#kannushiComment').html(comment[0]);
-			showResult();
-			$('#imgKannushi').attr('src',img[0]);
+			$('#kannushiComment').html(comment[0]);//神主のコメント
+			showResult();//各運勢の結果文
+			$('#imgKannushi').attr('src',img[0]);//神主の画像
 			break;
 		case 1:
 			$('#omikujiResult').text(omikuji[1]);
@@ -196,8 +197,8 @@ $(function(){
 
 function start(){
 	$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
-	//$('#imgKure').attr('src' ,'../images/kurewalk.gif');
 	//$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
+	//$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
 	getOmikuji();
 }
 

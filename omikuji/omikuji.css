@@ -55,6 +55,12 @@ body{
 	cursor:pointer;
 }
 
+#btnOtherGame{
+	position: absolute; 
+	top: 700px; 
+	left: 10px;
+}
+
 .imgAnime{
 	animation: rotate 1s;            
     animation-iteration-count: 1;    
