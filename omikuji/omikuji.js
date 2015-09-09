@@ -199,9 +199,14 @@ function start(){
 	$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
 	//$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
 	//$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
+	sound();
 	getOmikuji();
 }
 
+function sound(){
+	document.getElementById("sound").currentTime = 0;
+	$("#sound").get(0).play();
+}
 
 
 //デバッグ用関数
