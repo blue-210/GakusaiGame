@@ -73,12 +73,7 @@ $(function(){
            }
            currentNum++;
       }else{
-         $(this).addClass("btn-danger");
          soundIncorrect();
-         setTimeout(function(){
-            console.log($(this).text());
-            $(this).removeClass("btn-danger");
-         },300);
       }
     }
 

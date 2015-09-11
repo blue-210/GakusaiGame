@@ -47,7 +47,7 @@ public class OracleConnector extends Connector{
 
    public ArrayList<Double> select(String tableName){
       String sql = "SELECT score FROM ";
-      sql = sql.concat(tableName+" WHERE rownum <= 4 ORDER BY rank");
+      sql = sql.concat(tableName+" WHERE rownum <= 10 ORDER BY rank");
 
       try{
          this.connect();

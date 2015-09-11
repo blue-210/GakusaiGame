@@ -20,6 +20,12 @@ public class RankJudge{
       double rank2 = ranking.get(1);
       double rank3 = ranking.get(2);
       double rank4 = ranking.get(3);
+      double rank5 = ranking.get(4);
+      double rank6 = ranking.get(5);
+      double rank7 = ranking.get(6);
+      double rank8 = ranking.get(7);
+      double rank9 = ranking.get(8);
+      double rank10 = ranking.get(9);
 
       if(score > rank3){
          // 3位より時間がかかっていた場合,4位にする。
