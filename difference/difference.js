@@ -119,10 +119,11 @@ function sendResult(time){
    .done(function(data) {
       $('#rank>table>').remove();
       $('#rank>table').append('<th class="text-center">順位</th><th class="text-center">タイム</th></tr>');
+      $('#rank>table').append('<th class="text-center">あなたの順位 '+data.currentRank+'</th><th class="text-center">あなたのタイム '+data.currentScore+'</th></tr>');
 		console.log(data);
 		 // 直近のスコアが1位だった場合
 		if(data.currentRank == 1){
-         $('#rank>table').append("<tr class=\"blinking text-center\"><td>1位</td><td>"+data.currentRank+"</td></tr>");
+         $('#rank>table').append("<tr class=\"blinking text-center\"><td>1位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
@@ -134,7 +135,7 @@ function sendResult(time){
 			$('#rank>table').append("<tr class=\"text-center\"><td>10位</td><td>"+data.rank10+"</td></tr>");
 	   }else if(data.currentRank == 2){
 			$('#rank>table').append("<tr class=\"text-center\"><td>1位</td><td>"+data.rank1+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>2位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>2位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>5位</td><td>"+data.rank5+"</td></tr>");
@@ -146,7 +147,7 @@ function sendResult(time){
 	   }else if(data.currentRank == 3){
 			$('#rank>table').append("<tr class=\"text-center\"><td>1位</td><td>"+data.rank1+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>3位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>3位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>6位</td><td>"+data.rank6+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>7位</td><td>"+data.rank7+"</td></tr>");
@@ -158,7 +159,7 @@ function sendResult(time){
 			$('#rank>table').append("<tr class=\"text-center\"><td>1位</td><td>"+data.rank1+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>4位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>4位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>5位</td><td>"+data.rank5+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>6位</td><td>"+data.rank6+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>7位</td><td>"+data.rank7+"</td></tr>");
@@ -170,7 +171,7 @@ function sendResult(time){
 			$('#rank>table').append("<tr class=\"text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>5位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>5位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>6位</td><td>"+data.rank6+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>7位</td><td>"+data.rank7+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>8位</td><td>"+data.rank8+"</td></tr>");
@@ -182,7 +183,7 @@ function sendResult(time){
 			$('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>5位</td><td>"+data.rank5+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>6位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>6位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>7位</td><td>"+data.rank7+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>8位</td><td>"+data.rank8+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>9位</td><td>"+data.rank9+"</td></tr>");
@@ -194,7 +195,7 @@ function sendResult(time){
 			$('#rank>table').append("<tr class=\"text-center\"><td>4位</td><td>"+data.rank4+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>5位</td><td>"+data.rank5+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>6位</td><td>"+data.rank6+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>7位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>7位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>8位</td><td>"+data.rank8+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>9位</td><td>"+data.rank9+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>10位</td><td>"+data.rank10+"</td></tr>");
@@ -206,7 +207,7 @@ function sendResult(time){
 			$('#rank>table').append("<tr class=\"text-center\"><td>5位</td><td>"+data.rank5+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>6位</td><td>"+data.rank6+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>7位</td><td>"+data.rank7+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>8位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>8位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>9位</td><td>"+data.rank9+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>10位</td><td>"+data.rank10+"</td></tr>");
 	   }else if(data.currentRank == 9){
@@ -218,9 +219,9 @@ function sendResult(time){
 			$('#rank>table').append("<tr class=\"text-center\"><td>6位</td><td>"+data.rank6+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>7位</td><td>"+data.rank7+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>8位</td><td>"+data.rank8+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>9位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>9位</td><td>"+data.currentScore+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>10位</td><td>"+data.rank10+"</td></tr>");
-	   }else if(data.currentRank == 10){
+	   }else if(data.currentScore == 10){
 			$('#rank>table').append("<tr class=\"text-center\"><td>1位</td><td>"+data.rank1+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>2位</td><td>"+data.rank2+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>3位</td><td>"+data.rank3+"</td></tr>");
@@ -230,7 +231,7 @@ function sendResult(time){
 			$('#rank>table').append("<tr class=\"text-center\"><td>7位</td><td>"+data.rank7+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>8位</td><td>"+data.rank8+"</td></tr>");
 			$('#rank>table').append("<tr class=\"text-center\"><td>9位</td><td>"+data.rank9+"</td></tr>");
-			$('#rank>table').append("<tr class=\"blinking text-center\"><td>10位</td><td>"+data.currentRank+"</td></tr>");
+			$('#rank>table').append("<tr class=\"blinking text-center\"><td>10位</td><td>"+data.currentScore+"</td></tr>");
 	   }
       $('.modal-footer > button:first').on('click',function(){
          clearTimeout(watchTimerID);
