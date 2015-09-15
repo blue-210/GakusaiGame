@@ -117,31 +117,28 @@ function sendResult(time){
       }
    })
    .done(function(data) {
-		console.log(data[11].currentScore);
-
+		console.log(data[10].currentRank);
 		$('#ranking2').append('<th class="text-center">順位</th><th class="text-center">タイム</th>');
 
-		// 10位までを表示させる
-		// 直近のスコアがランク外のとき
-		if(data.currentRank = -1){
-			// ランク外ならば、直近のランクを「ランク外」に設定
-			data.currentRank = 'ランク外';
-
-			// ランク用変数
-			var rank = 1;
-			for(var i = 0; i <= 9; i++){
+		// ランク用変数
+		var rank = 1;
+		for(var i = 0; i <= 9; i++){
+			if(data[10].currentRank = -1){
+				// ランク外ならば、直近のランクを「ランク外」に設定
+				data[10].currentRank = 'ランク外';
 				$('#ranking2').append("<tr class=\"text-center\"><td>"+rank+"位</td><td>"+data[i].score+"</td></tr>");
-				rank++;
+			}else if(data[10].currentRank = rank){
+				// ランクインしている場合
+				$('#ranking2').append("<tr class=\"blinking text-center\"><td>"+data[10].currentRank+"位</td><td>"+data[11].currentScore+"</td></tr>");
+			}else{
+				// 10位までを表示させる処理
+				$('#ranking2').append("<tr class=\"text-center\"><td>"+rank+"位</td><td>"+data[i].score+"</td></tr>");
 			}
-		}else if(data.currentRank = 1){
-			$('#ranking2').append("<tr class=\"blinking text-center\"><td>"+rank+"位</td><td>"+data.currentScore+"</td></tr>");
-			$('#ranking2').append("<tr class=\"text-center\"><td>"+rank+"位</td><td>"+score+"</td></tr>");
 			rank++;
 		}
-
 		// 最後に直近のランクとスコアを表示させる
 		$('#current').append('<th class="text-center">あなたの順位</th><th class="text-center">あなたのタイム</th>');
-		$('#current').append("<tr class=\"text-center\"><td>"+data.currentRank+"</td><td>"+data[11].currentScore+"</td></tr>");
+		$('#current').append("<tr class=\"text-center\"><td>"+data[10].currentRank+"</td><td>"+data[11].currentScore+"</td></tr>");
 
       $('.modal-footer > button:first').on('click',function(){
          clearTimeout(watchTimerID);

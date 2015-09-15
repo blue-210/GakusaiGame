@@ -27,49 +27,98 @@ public class RankJudge{
       double score9 = ranking.get(8);
       double score10 = ranking.get(9);
 
-      if(score > score3){
-         // 3位より時間がかかっていた場合,4位にする。
-         cn.update(tableName, score, 4);
+      if(score > score10){
+         // 10位より遅かった場合、そのまま返す。
          return ranking;
+      }else if(score > score9){
+         // 10位よりも速いが、9位よりは遅かった場合
+         // scoreを10位
+         cn.update(tableName,score,10);
+         return cn.select(tableName);
+      }else if(score > score8){
+         // 9位よりも速いが、8位よりは遅かった場合
+         // score→9位、9位を10位
+         cn.update(tableName,score,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
+      }else if(score > score7){
+         // 8位よりも速いが、7位よりは遅かった場合
+         // score→8、8→9, 9→10
+         cn.update(tableName,score,8);
+         cn.update(tableName,score8,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
+      }else if(score > score6){
+         // 7位よりも速いが、6位よりは遅かった場合
+         // score→7、7→8, 8→9
+         cn.update(tableName,score,7);
+         cn.update(tableName,score7,8);
+         cn.update(tableName,score8,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
+      }else if(score > score5){
+         // 6位よりも速いが、5位よりは遅かった場合
+         cn.update(tableName,score,6);
+         cn.update(tableName,score6,7);
+         cn.update(tableName,score7,8);
+         cn.update(tableName,score8,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
+      }else if(score > score4){
+         // 5位よりも速いが、4位よりは遅かった場合
+         cn.update(tableName,score,5);
+         cn.update(tableName,score5,6);
+         cn.update(tableName,score6,7);
+         cn.update(tableName,score7,8);
+         cn.update(tableName,score8,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
+      }else if(score > score3){
+         // 4位よりも速いが、3位よりは遅かった場合
+         cn.update(tableName,score,4);
+         cn.update(tableName,score4,5);
+         cn.update(tableName,score5,6);
+         cn.update(tableName,score6,7);
+         cn.update(tableName,score7,8);
+         cn.update(tableName,score8,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
       }else if(score > score2){
          // 3位よりも速いが、2位よりは遅かった場合
-         // score→3位、3位を4位に
          cn.update(tableName,score,3);
          cn.update(tableName,score3,4);
-
-         ranking = cn.select(tableName);
-         for(Double i : ranking){
-            System.out.println("In RankJudge rank2 < score "+i);
-         }
-
-         return ranking;
+         cn.update(tableName,score4,5);
+         cn.update(tableName,score5,6);
+         cn.update(tableName,score6,7);
+         cn.update(tableName,score7,8);
+         cn.update(tableName,score8,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
       }else if(score > score1){
          // 2位よりも速いが、1位よりは遅かった場合
-         // score→2位、2位を3位、3位を4位に更新
          cn.update(tableName,score,2);
          cn.update(tableName,score2,3);
          cn.update(tableName,score3,4);
-
-         ranking = cn.select(tableName);
-         for(Double i : ranking){
-            System.out.println("In RankJudge rank1 < score "+i);
-         }
-
-         return ranking;
+         cn.update(tableName,score4,5);
+         cn.update(tableName,score5,6);
+         cn.update(tableName,score6,7);
+         cn.update(tableName,score7,8);
+         cn.update(tableName,score8,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
       }else{
-         // 1位よりも速かった場合
-         // 順位を更新 socre→1位、1位→2位、2位→3位、3位→4位で更新
+         // 1位よりも速い場合
          cn.update(tableName,score,1);
          cn.update(tableName,score1,2);
          cn.update(tableName,score2,3);
          cn.update(tableName,score3,4);
-
-         ranking = cn.select(tableName);
-         for(Double i : ranking){
-            System.out.println("In RankJudge rank1 < score "+i);
-         }
-         // System.out.println("\n");
-         return ranking;
+         cn.update(tableName,score4,5);
+         cn.update(tableName,score5,6);
+         cn.update(tableName,score6,7);
+         cn.update(tableName,score7,8);
+         cn.update(tableName,score8,9);
+         cn.update(tableName,score9,10);
+         return cn.select(tableName);
       }
    }
 }
