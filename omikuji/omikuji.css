@@ -6,57 +6,85 @@ body{
    				 "MS PMincho",
    				 "MS 明朝",
    				 serif;
-	background-repeat: no-repeat;
-	background-size:845px 300px;
-	background-position: center 130%;
+   	background-image: url("../images/torii.jpg");
+   	background-repeat:no-repeat;
+   	background-position: center 100px;
+   	background-size: 1900px 970px;
+
+	
+}
+
+#results{
+	position: relative;
+}
+
+#imgResult{
+	width:900px;
+	height:350px;
+	position: relative;
+	top:180px;
+}
+
+#resultText{
+	position: absolute;
+	left:20px;
+	top:240px;
 }
 
 #omikujiResult{
 	font-size:30px;
 }
 
-#results{
+#unseiText{
 	font-size:20px;
+	width:900px;
 }
 
+
 #imgKannushi{
-	height:300px;
-	margin-bottom:20px;
+	height:400px;
 	position: absolute;
 	left:20px;
+	top:200px;
 }
 
 #imgSayKannushi{
 	height:200px;
 	margin-bottom:20px;
 	position: absolute;
-	left:250px;
+	top:250px;
+	left:320px;
 }
 
 #kannushiComment{
+	font-size: 20px;
 	position: absolute; 
-	top: 130px; 
-	left: 300px; 
-	width: 320px;"
+	top: 270px; 
+	left: 370px; 
+	width: 320px;
 }
 
 #imgUnsei{
-	width:250px;
-	margin-bottom:20px;
+	width:300px;
 	position: absolute;
-	right:10px;
+	right:80px;
+	top:600px;
 }
 
 #imgOmikuji{
-	width:100px;
+	width:150px;
 	margin-bottom:100px;
 	cursor:pointer;
+	position: relative;
+	top:100px;
 }
+
+
 
 #btnOtherGame{
 	position: absolute; 
-	top: 700px; 
-	left: 10px;
+	top: 1013px; 
+	left: 235px;
 }
 
 .imgAnime{

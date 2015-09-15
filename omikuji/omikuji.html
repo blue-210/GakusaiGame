@@ -29,24 +29,30 @@
       <!-- コンテンツ -->
       <div class="container">
          <div class="row">
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
+            <image id="imgSayKannushi" src="../images/saykannushi_first.jpg"> 
             <image id="imgKannushi" src="../images/kannushi.jpg" onclick="changeKannushi()">
-            <image src="../images/saykannushi_first.jpg" id="imgSayKannushi"> 
             
             <image id="imgUnsei" src="../images/unsei.jpg">
             
-            <div class="col-md-8 text-center">
+            <div class="col-md-10 text-center">
 
                <!--おみくじ画像　クリックで判定-->
                <image id="imgOmikuji" src="../images/omikuji.jpg" onclick="start()">
 
+               
+
                <!-- 結果 -->
-               <p><span id="omikujiResult" class="label label-danger"></span></p>
-               <br>
                <div id="results">
-	               <p><span id="hopeResult"></span></p>
-	               <p><span id="loveResult"></span></p>
-	               <p><span id="studyResult"></span></p>
+                  <image id="imgResult" src="../images/omikujiResult.jpg">
+                  <div id="resultText">
+                   <span id="omikujiResult" class="label label-danger"></span><br><br><br>
+                   <div id="unseiText">              
+                     <span id="hopeResult"></span><br><br>
+                     <span id="loveResult"></span><br><br>
+                     <span id="studyResult"></span><br><br>
+                   </div>
+                  </div>
                </div>
 
 	         </div>
@@ -56,13 +62,13 @@
                右の箱をクリックして、神様からの助言を受けてください。
             </span>
 
-            <button id="btnOtherGame" class="btn btn-primary btn-lg" 
+            <button id="btnOtherGame" class="btn btn-danger btn-lg" 
                     onclick="window.location.href = '../index.html';">
                         <span class="glyphicon glyphicon-search" aria-hidden="true"></span> 
                         違うゲームであそぶ
             </button>
             
-            <div class="col-md-2"></div>
+            <div class="col-md-1"></div>
          </div>
       </div>
    </body>

@@ -45,7 +45,8 @@ var love = [
 		"君の家、鏡ある？",
 		"高望みしすぎじゃない？",
 		"失恋のたびにアドレス変えるの、学習したら？",
-		"ゼクシィとは無縁の人生でしょう。"
+		"ゼクシィとは無縁の人生でしょう。",
+		"いくら待っても画面からは出てきませんよ。"
 	]
 ]; 
 
@@ -73,7 +74,7 @@ var study = [
 
 var comment = [
 	//大吉
-		"大吉だね。<br>だからって調子に乗るなよ。",
+		"大吉だ！。最高だな！<br>だからって調子に乗るなよ。",
 	//中吉
 		"中吉だね。<br>うん、いい方。全然いい方だよ。",
 	//小吉
@@ -83,7 +84,7 @@ var comment = [
 	//凶
 		"凶だね。<br>あ～あ",
 	//大凶
-		"大凶だね。ご愁傷さま。<br>でも気を落とすなよ。<br>大凶ってことはこれ以上下がることはないってことだ。"
+		"大凶だね。ご愁傷様。<br>でも気を落とすなよ。<br>大凶ってことはこれ以上下がることはないってことだ。"
 ]
 
 var hopeScore,
@@ -94,14 +95,16 @@ var hopeScore,
 	loveResult,
 	studyResult;
 
+
 $(document).ready( function(){
-	$('body').css('background-image', 'none');
+	$('#imgResult').hide();
 });
+
 
 
 function getOmikuji(){
 	
-	$('body').css('background-image', 'url(../images/omikujiResult.jpg)');
+	//$('body').css('background-image', 'url(../images/omikujiResult.jpg)');
 	
 	//各運勢の良し悪しを決める
 	hopeScore = getScore();//Math.floor(Math.random() * hope.length);
@@ -203,6 +206,7 @@ $(function(){
 
 function start(){
 	$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
+	$('#imgResult').show();
 	//$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
 	//$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
 	sound();
