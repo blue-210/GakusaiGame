@@ -16,26 +16,26 @@ public class RankJudge{
       // 表からデータを取得
       ArrayList<Double> ranking = cn.select(tableName);
 
-      double rank1 = ranking.get(0);
-      double rank2 = ranking.get(1);
-      double rank3 = ranking.get(2);
-      double rank4 = ranking.get(3);
-      double rank5 = ranking.get(4);
-      double rank6 = ranking.get(5);
-      double rank7 = ranking.get(6);
-      double rank8 = ranking.get(7);
-      double rank9 = ranking.get(8);
-      double rank10 = ranking.get(9);
+      double score1 = ranking.get(0);
+      double score2 = ranking.get(1);
+      double score3 = ranking.get(2);
+      double score4 = ranking.get(3);
+      double score5 = ranking.get(4);
+      double score6 = ranking.get(5);
+      double score7 = ranking.get(6);
+      double score8 = ranking.get(7);
+      double score9 = ranking.get(8);
+      double score10 = ranking.get(9);
 
-      if(score > rank3){
+      if(score > score3){
          // 3位より時間がかかっていた場合,4位にする。
          cn.update(tableName, score, 4);
          return ranking;
-      }else if(score > rank2){
+      }else if(score > score2){
          // 3位よりも速いが、2位よりは遅かった場合
          // score→3位、3位を4位に
          cn.update(tableName,score,3);
-         cn.update(tableName,rank3,4);
+         cn.update(tableName,score3,4);
 
          ranking = cn.select(tableName);
          for(Double i : ranking){
@@ -43,12 +43,12 @@ public class RankJudge{
          }
 
          return ranking;
-      }else if(score > rank1){
+      }else if(score > score1){
          // 2位よりも速いが、1位よりは遅かった場合
          // score→2位、2位を3位、3位を4位に更新
          cn.update(tableName,score,2);
-         cn.update(tableName,rank2,3);
-         cn.update(tableName,rank3,4);
+         cn.update(tableName,score2,3);
+         cn.update(tableName,score3,4);
 
          ranking = cn.select(tableName);
          for(Double i : ranking){
@@ -60,9 +60,9 @@ public class RankJudge{
          // 1位よりも速かった場合
          // 順位を更新 socre→1位、1位→2位、2位→3位、3位→4位で更新
          cn.update(tableName,score,1);
-         cn.update(tableName,rank1,2);
-         cn.update(tableName,rank2,3);
-         cn.update(tableName,rank3,4);
+         cn.update(tableName,score1,2);
+         cn.update(tableName,score2,3);
+         cn.update(tableName,score3,4);
 
          ranking = cn.select(tableName);
          for(Double i : ranking){

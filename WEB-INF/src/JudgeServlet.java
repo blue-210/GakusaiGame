@@ -28,22 +28,23 @@ public class JudgeServlet extends HttpServlet{
          ranking = judge.judge(Double.parseDouble(currentScore), table);
 
          // 順位ごとのscore用変数
-         double rank1 = ranking.get(0);
-         double rank2 = ranking.get(1);
-         double rank3 = ranking.get(2);
-         double rank4 = ranking.get(3);
-         double rank5 = ranking.get(4);
-         double rank6 = ranking.get(5);
-         double rank7 = ranking.get(6);
-         double rank8 = ranking.get(7);
-         double rank9 = ranking.get(8);
-         double rank10 = ranking.get(9);
+         double score1 = ranking.get(0);
+         double score2 = ranking.get(1);
+         double score3 = ranking.get(2);
+         double score4 = ranking.get(3);
+         double score5 = ranking.get(4);
+         double score6 = ranking.get(5);
+         double score7 = ranking.get(6);
+         double score8 = ranking.get(7);
+         double score9 = ranking.get(8);
+         double score10 = ranking.get(9);
+         System.out.println(score1);
 
          // 直近のスコアの順位を確かめる
          int currentRank = ranking.indexOf(Double.parseDouble(currentScore));
 
-         String resJson = "{\"rank1\":"+rank1+",\"rank2\":"+rank2+",\"rank3\":"+rank3+",\"rank4\":"+rank4+",\"rank5\":"+rank5+",\"rank6\":"+rank6+",\"rank7\":"+rank7+",\"rank8\":"+rank8+",\"rank9\":"+rank9+",\"rank10\":"
-         +rank10+",\"currentRank\":"+currentRank+"}";
+         String resJson = "[{\"score\":"+score1+"},{\"score\":"+score2+"},{\"score\":"+score3+"},{\"score\":"+score4+"},{\"score\":"+score5+"},{\"score\":"+score6+"},{\"score\":"+score7+"},{\"score\":"+score8+"},{\"score\":"+score9+"},{\"score\":"+score10+"},{\"currentRank\":"+currentRank+"},{\"currentScore\":"+currentScore+"}]";
+
          System.out.println(resJson);
          res.setContentType("application/json; charset=utf-8");
          PrintWriter out = res.getWriter();
