@@ -206,11 +206,12 @@ $(function(){
 
 function start(){
 	$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
-	$('#imgResult').show();
-	//$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
-	//$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
 	sound();
-	getOmikuji();
+	$('#imgResult').show("nomal");
+	$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
+	$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
+	getOmikuji()
+	
 }
 
 function sound(){
