@@ -45,22 +45,23 @@ body{
 	height:400px;
 	position: absolute;
 	left:20px;
-	top:200px;
+	top:680px;
 }
 
 #imgSayKannushi{
 	height:200px;
+	width: 350px;
 	margin-bottom:20px;
 	position: absolute;
-	top:250px;
-	left:320px;
+	top:550px;
+	left:180px;
 }
 
 #kannushiComment{
 	font-size: 20px;
 	position: absolute; 
-	top: 270px; 
-	left: 370px; 
+	top: 570px; 
+	left: 200px; 
 	width: 320px;
 }
 
@@ -83,8 +84,8 @@ body{
 
 #btnOtherGame{
 	position: absolute; 
-	top: 1013px; 
-	left: 235px;
+	top: 1020px; 
+	left:500px;
 }
 
 .imgAnime{
