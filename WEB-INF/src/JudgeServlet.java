@@ -19,7 +19,7 @@ public class JudgeServlet extends HttpServlet{
          req.setCharacterEncoding("utf-8");
          // ajaxで送ったデータを取得する
          String currentScore = req.getParameter("score");
-         System.out.println(currentScore);
+         System.out.println("JudgeServlet currentScore "+currentScore);
          String table = req.getParameter("table");
          System.out.println(table);
 

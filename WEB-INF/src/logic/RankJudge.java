@@ -27,6 +27,9 @@ public class RankJudge{
       double score9 = ranking.get(8);
       double score10 = ranking.get(9);
 
+      System.out.println("RankJudge ランク1 "+score1);
+
+      System.out.println("RankJudge currentScore "+score);
       if(score > score10){
          // 10位より遅かった場合、そのまま返す。
          return ranking;
