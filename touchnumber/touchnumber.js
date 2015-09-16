@@ -10,6 +10,7 @@ $(function(){
       resultTime = 0; // ゲームの結果タイムを保存するもの
 
     $('#rule').modal('show');
+    $('img').imgLiquid();
 
     $("#start").on("click", function() {
        $('#board').hide();

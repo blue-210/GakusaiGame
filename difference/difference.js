@@ -1,3 +1,9 @@
+$(function(){
+	$('#rule').modal('show');
+	$('img').imgLiquid();
+});
+
+
 var level = 0;
 var games = [
 	['大 ', '太 '],
@@ -101,10 +107,6 @@ function runTimer() {
 	$('#timer').text(resultTime);
 	watchTimerID = setTimeout(runTimer, 10);
 }
-
-$(function(){
-	$('#rule').modal('show');
-});
 
 function sendResult(time){
    $.ajax({

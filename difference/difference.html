@@ -5,9 +5,11 @@
 	<title>間違い探しゲーム</title>
 	<script type="text/javascript" src="../BootStrap/jquery-2.1.4.js"></script>
 	<script type="text/javascript" src="../BootStrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="../BootStrap/imgLiquid-min.js"></script>
 	<script type="text/javascript" src="difference.js"></script>
 	<link href="../BootStrap/css/bootstrap.min.css" rel="stylesheet">
 	<link href="difference.css" rel="stylesheet" type="text/css" />
+	<link href="../BootStrap\index.css" rel="stylesheet">
 </head>
 <body>
 	<audio id="incorrect" preload="auto">
@@ -20,42 +22,52 @@
    </audio>
 <center>
 	<div class="page-header">
-		<h1>ま　ち　が　い　さ　が　し</h1>
+		<h1 class="myFontClass">ま　ち　が　い　さ　が　し</h1>
 	</div>
 
-	<!-- モーダルの設定 -->
+	<div class="row">
+		<div class="col-md-2">
+			<img src="../images/isaka.jpg" alt="" width="400px" height="400px">
+		</div>
+		<div class="col-md-8">
+			<!-- スタートボタン -->
+			<button id="startbtn" type="button" class="btn btn-primary btn-lg myFontClass" onclick="gameStart();">はじめる</button>
+
+			<!-- レベル表示 -->
+			<div id="level" class="label label-lg label-default"></div>
+
+			<!-- タイマー -->
+			<p><span id="timer" class="glyphicon glyphicon-time myFontClass">0:00</span></p>
+
+			<!-- 問題本体 -->
+			<div id="cells"></div>
+
+			<!-- スコア表示 -->
+			<div id="score" class="label label-primary"></div>
+		</div>
+		<div class="col-md-2">
+		</div>
+	</div><!--end row-->
+
+	<!-- 説明用モーダルの設定 -->
 	<div class="modal fade" id="rule" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 	  <div class="modal-dialog">
 	    <div class="modal-content">
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">閉じる</span></button>
-	        <h4 class="modal-title text-primary" id="myModalLabel">まちがいさがしゲームのルール</h4>
+	        <h4 class="modal-title text-primary myFontClass" id="myModalLabel">まちがいさがしゲームのルール</h4>
 	      </div>
 	      <div class="modal-body">
-	        <p>たくさんの文字の中に、1つだけ違う文字がまざってるよ。</p>
-	        <p>見つけたらその文字をクリック！</p>
-	        <p>問題はレベル3まであるからがんばって。</p>
-	        <p>早く見つけられるとランキングに君の記録がのるよ！</p>
+	        <p class="myFontClass">たくさんの文字の中に、1つだけ違う文字がまざってるよ。</p>
+	        <p class="myFontClass">見つけたらその文字をクリック！</p>
+	        <p class="myFontClass">問題はレベル3まであるからがんばって。</p>
+	        <p class="myFontClass">早く見つけられるとランキングに君の記録がのるよ！</p>
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
 
 
-	<!-- スタートボタン -->
-	<button id="startbtn" type="button" class="btn btn-primary btn-lg" onclick="gameStart();">はじめる</button>
-
-	<!-- レベル表示 -->
-	<div id="level" class="label label-lg label-default"></div>
-
-	<!-- タイマー -->
-	<p><span id="timer" class="glyphicon glyphicon-time">0:00</span></p>
-
-	<!-- 問題本体 -->
-	<div id="cells"></div>
-
-	<!-- スコア表示 -->
-	<div id="score" class="label label-primary"></div>
 
 	<!-- ランキング用モーダル -->
 	<div class="modal fade" id="ranking" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

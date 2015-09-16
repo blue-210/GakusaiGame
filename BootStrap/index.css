@@ -2,3 +2,17 @@ img.img-thumbnail{
    width:397px;
    height:624px;
 }
+
+@font-face {
+  font-family: "myFont";
+  src: url("misaki_gothic.eot") format('eot'),
+       url("misaki_gothic.woff") format('woff'),
+       url("misaki_gothic.ttf")  format('truetype');
+}
+.myFontClass {
+  font-family: "myFont";
+}
+
+#myFontClass{
+   font-family: "myFont";
+}
