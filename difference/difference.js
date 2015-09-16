@@ -145,7 +145,7 @@ function sendResult(time){
 	  $('#current').append('<th class="text-center">あなたの順位</th><th class="text-center">あなたのタイム</th>');
 	  $('#current').append("<tr class=\"text-center\"><td>"+data[10].currentRank+"</td><td>"+parseFloat(data[11].currentScore).toFixed(2)+"</td></tr>");
 
-      $('.modal-footer > button:first').on('click',function(){
+      	$('.modal-footer > button:first').on('click',function(){
          clearTimeout(watchTimerID);
         $('#timer').text('0.00');
         $('#startbtn').show();

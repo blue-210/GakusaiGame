@@ -36,8 +36,8 @@ TRUNCATE TABLE diffranking;
 -- 数字タッチゲーム
 INSERT INTO touchranking VALUES(1,3.04);
 INSERT INTO touchranking VALUES(2,4.21);
-INSERT INTO touchranking VALUES(3,5.66);
-INSERT INTO touchranking VALUES(4,5.67);
+INSERT INTO touchranking VALUES(3,5.00);
+INSERT INTO touchranking VALUES(4,5.00);
 INSERT INTO touchranking VALUES(5,6.12);
 INSERT INTO touchranking VALUES(6,6.14);
 INSERT INTO touchranking VALUES(7,6.20);
@@ -60,7 +60,7 @@ commit;
 -- テストデータの修正
 UPDATE touchranking SET rank=1, score=3.13 WHERE rank = 1;
 UPDATE touchranking SET rank=2,score=4.34 WHERE rank = 2;
-UPDATE touchranking SET rank=3,score=5.60 WHERE rank = 3;
+UPDATE touchranking SET rank=3,score=5.00 WHERE rank = 3;
 UPDATE touchranking SET rank=4,score=6.22 WHERE rank = 4;
 UPDATE touchranking SET rank=5,score=7.33 WHERE rank = 5;
 UPDATE touchranking SET rank=6,score=8.44 WHERE rank = 6;
