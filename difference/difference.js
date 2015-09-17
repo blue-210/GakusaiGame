@@ -8,7 +8,10 @@ var level = 0;
 var games = [
 	['大 ', '太 '],
 	['白 ', '臼 '],
-	['問 ', '門 '],
+	['人 ', '入 '],
+	['千 ', '誤 '],
+	['崇 ', '誤 '],
+	
 ];
 
 var MAX_LEVEL = games.length-1,
@@ -58,13 +61,26 @@ function gameStart(){
 	//配列のうち一つをseikaiにする
 	var offset = Math.floor(Math.random() * chars.length);
 	chars.splice(offset, 1, seikai);
-	$('#s'+ (offset+1) ).attr("class", "point");
-
+	//$('#s'+ (offset+1) ).attr("class", "point");
+	
 	//span要素にそれらの配列の値をはめこむ
 	for(var i=1; i<=chars.length; i++){
 		$('#s'+i).text(chars[i-1]);
-		$('#s'+i).click(function(){
+		
+		//正解をマウスダウンすると色が変わる
+		$('#s'+i).mousedown(function(){
 			if($(this).text() == seikai){
+				$(this).attr("class","text-primary");
+			}else{
+				$(this).attr("class","text-danger");
+				$(this).mouseup(function(){
+					$(this).attr("class","");
+				});
+			}
+		});
+
+		$('#s'+i).click(function(){
+			if($(this).text() == seikai){	
 				soundCorrect();
 				level++;
 				dim += DIM_DELTA;

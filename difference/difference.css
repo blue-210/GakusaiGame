@@ -2,10 +2,13 @@ span{
 	cursor:pointer;
 }
 #cells{
-	font-family:;
-	font-size:40px;
+	font-family:cursive;
+	font-size:35px;
 	margin-top:20px;
 }
+
+
+
 #score{
 	font-size:30px;
 }
