@@ -8,7 +8,6 @@ span{
 }
 
 
-
 #score{
 	font-size:30px;
 }
@@ -23,6 +22,7 @@ span{
 	vertical-align: top;
 	margin-top:30px;
 	margin-left: 5px;
+	cursor: default;
 }
 
 #myModalLabel{
