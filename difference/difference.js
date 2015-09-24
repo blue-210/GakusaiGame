@@ -23,9 +23,16 @@ var MAX_LEVEL = games.length-1,
 	resultTime = 0, // ゲームの結果タイムを保存するもの
 	point = undefined;
 
+//画像動かし用-------------------------------------------------
+var x = 0, y = 0, divx = 1, divy = 1, velx = 4, vely = 4;
+var moveImgTimerId;
+//-----------------------------------------------------------
 
 //スタートボタンが押されたらゲーム開始
 function gameStart(){
+
+	moveImg();
+
    MAX_LEVEL = games.length-1
 	$('#startbtn').hide();//スタートボタンを隠す
    $('#cells').show();
@@ -86,6 +93,7 @@ function gameStart(){
 				dim += DIM_DELTA;
 				if(level > MAX_LEVEL){
 					clearTimeout(watchTimerID);
+					clearTimeout(moveImgTimerId);
 					$('#level').hide();
 					$('#cells').hide();
 					$('#timer').hide();
@@ -123,6 +131,29 @@ function runTimer() {
 	$('#timer').text(resultTime);
 	watchTimerID = setTimeout(runTimer, 10);
 }
+
+
+function moveImg(){
+	$('#imgIsaka').css({left: x + 'px', top: y + 'px'});
+
+	x = x + velx * divx;
+
+	if((x + $('#imgIsaka').width() > 1950) || (x < 0)){
+		divx = - divx;
+		x = x + velx * divx;
+	}
+
+	y = y + vely * divy;
+
+	if((y + $('#imgIsaka').height() > 950) || (y < 0)){
+		divy = - divy;
+		y = y + vely * divy;
+	}
+
+	moveImgTimerId = setTimeout(moveImg, 10);
+}
+
+
 
 function sendResult(time){
    $.ajax({

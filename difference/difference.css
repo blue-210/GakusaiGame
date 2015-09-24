@@ -33,6 +33,13 @@ span{
 	width: 49%;
 }
 
+#imgIsaka{
+	position: relative;
+	top: 0px;
+	left: 0px;
+	opacity:0.5;
+}
+
 /* 点滅 */
 .blinking{
 	-webkit-animation:blink 0.2s ease-in-out infinite alternate;
