@@ -9,10 +9,16 @@ $(function(){
       watchTimerID = undefined, // ゲームのタイマー
       resultTime = 0; // ゲームの結果タイムを保存するもの
 
+  //画像動かし用-------------------------------------------------
+  var x = 0, y = 0, divx = 1, divy = 1, velx = 4, vely = 4;
+  var moveImgTimerId;
+  //-----------------------------------------------------------
+
     $('#rule').modal('show');
     $('img').imgLiquid();
 
     $("#start").on("click", function() {
+        moveImg();
        $('#board').hide();
         $timeCount.text("0.00");
         $board.html("");
@@ -67,6 +73,7 @@ $(function(){
 
            if (currentNum == BTN_NUMBER) {
                clearTimeout(watchTimerID);
+               clearTimeout(moveImgTimerId);
                $('#start').hide();
                $('#board').hide();
                $('#timer').hide();
@@ -90,6 +97,25 @@ $(function(){
      $("#correct").get(0).play();
   }
 
+  function moveImg(){
+    $('#imgKure').css({left: x + 'px', top: y + 'px'});
+
+    x = x + velx * divx;
+
+    if((x + $('#imgKure').width() > 1950) || (x < 0)){
+      divx = - divx;
+      x = x + velx * divx;
+    }
+
+    y = y + vely * divy;
+
+    if((y + $('#imgKure').height() > 950) || (y < 0)){
+      divy = - divy;
+      y = y + vely * divy;
+  }
+
+  moveImgTimerId = setTimeout(moveImg, 10);
+}
 
     function sendResult(time){
        $.ajax({
