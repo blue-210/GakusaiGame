@@ -1,7 +1,9 @@
+
 img.img-thumbnail{
-   width:397px;
-   height:624px;
+   width:548px;
+   height:585px;
 }
+
 
 @font-face {
   font-family: "myFont";
@@ -11,4 +13,8 @@ img.img-thumbnail{
 }
 .myFontClass {
   font-family: "myFont";
+}
+
+a:link,a:hover{
+   color: black;
 }
