@@ -102,14 +102,14 @@ $(function(){
 
     x = x + velx * divx;
 
-    if((x + $('#imgKure').width() > 1950) || (x < 0)){
+    if((x + $('#imgKure').width() > 1930) || (x < 0)){
       divx = - divx;
       x = x + velx * divx;
     }
 
     y = y + vely * divy;
 
-    if((y + $('#imgKure').height() > 950) || (y < 0)){
+    if((y + $('#imgKure').height() > 930) || (y < 0)){
       divy = - divy;
       y = y + vely * divy;
   }

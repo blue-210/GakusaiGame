@@ -138,19 +138,19 @@ function moveImg(){
 
 	x = x + velx * divx;
 
-	if((x + $('#imgIsaka').width() > 1950) || (x < 0)){
+	if((x + $('#imgIsaka').width() > 1920) || (x < 0)){
 		divx = - divx;
 		x = x + velx * divx;
 	}
 
 	y = y + vely * divy;
 
-	if((y + $('#imgIsaka').height() > 950) || (y < 0)){
+	if((y + $('#imgIsaka').height() > 930) || (y < 0)){
 		divy = - divy;
 		y = y + vely * divy;
 	}
 
-	moveImgTimerId = setTimeout(moveImg, 10);
+	moveImgTimerId = setTimeout(moveImg, 10	);
 }
 
 
