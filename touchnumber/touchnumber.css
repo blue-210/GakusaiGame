@@ -8,10 +8,14 @@
 }
 
 #timer{
-	font-size: 30px;
+	font-size: 35px;
 	letter-spacing: 0.1em;
 	vertical-align: top;
 	margin-left: 5px;
+}
+
+#rule{
+	font-size: 20px;
 }
 
 #board{
@@ -21,6 +25,10 @@
 
 #score{
 	font-size:30px;
+}
+
+#rank{
+	font-size:20px;
 }
 
 .btn-default{

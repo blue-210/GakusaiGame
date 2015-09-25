@@ -1,6 +1,6 @@
 
 $(function(){
-   var SIZE = 3, // 出現する数字の数を指定する
+   var SIZE = 4, // 出現する数字の数を指定する
       BTN_NUMBER = SIZE*SIZE;
       $board = $("#board"), // ランダムな数字を入れるところ
       $timeCount = $("#timer"), // タイマーを表示するところ

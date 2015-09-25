@@ -34,7 +34,7 @@
 			<button id="startbtn" type="button" class="btn btn-primary btn-lg myFontClass" onclick="gameStart();">はじめる</button>
 
 			<!-- レベル表示 -->
-			<button id="level" class="btn btn-default btn-lg myFontClass"></button>
+			<button id="level" class="btn btn-default btn-lg myFontClass" disabled="true"></button>
 
 			<!-- タイマー -->
 			<p><span id="timer" class="myFontClass">0:00</span></p>
@@ -57,11 +57,11 @@
 	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">閉じる</span></button>
 	        <h4 class="modal-title text-primary myFontClass" id="myModalLabel">まちがいさがしゲームのルール</h4>
 	      </div>
-	      <div class="modal-body">
-	        <p class="myFontClass">たくさんの文字の中に、1つだけ違う文字がまざってるよ。</p>
-	        <p class="myFontClass">見つけたらその文字をクリック！</p>
-	        <p class="myFontClass">問題はレベル3まであるからがんばって。</p>
-	        <p class="myFontClass">早く見つけられるとランキングに君の記録がのるよ！</p>
+	      <div class="modal-body myFontClass">
+	        <p>たくさんの文字の中に、1つだけ違う文字がまざってるよ。</p>
+	        <p>見つけたらその文字をクリック！</p>
+	        <p>問題はレベル3まであるからがんばって。</p>
+	        <p>早く見つけられるとランキングに君の記録がのるよ！</p>
 	      </div>
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
@@ -74,15 +74,15 @@
 	  <div class="modal-dialog">
 		 <div class="modal-content">
 			<div class="modal-header">
-			  <h4 class="modal-title text-center text-primary" id="myModalLabel">ランキング</h4>
+			  <h4 class="modal-title text-center text-primary myFontClass" id="myModalLabel">ランキング</h4>
 			</div>
 			<div id="rank" class="modal-body">
-				<table class="table" id="ranking2"></table>
-				<table class="table" id="current"></table>
+				<table class="table myFontClass" id="ranking2"></table>
+				<table class="table myFontClass" id="current"></table>
 			</div>
 			<div class="modal-footer">
-			  <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> もう一度このゲームをする</button>
-			  <button type="button" class="btn btn-primary btn-lg" data-dismiss="modai"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 違うゲームであそぶ</button>
+			  <button type="button" class="btn btn-primary btn-lg myFontClass" data-dismiss="modal"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> もう一度このゲームをする</button>
+			  <button type="button" class="btn btn-primary btn-lg myFontClass" data-dismiss="modai"><span class="glyphicon glyphicon-search" aria-hidden="true"></span> 違うゲームであそぶ</button>
 			</div>
 		 </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->

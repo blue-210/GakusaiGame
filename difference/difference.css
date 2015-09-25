@@ -3,14 +3,17 @@ span{
 }
 
 .btn-default{
-	font-size:25px;
+	font-size:18px;
 	text-align: center;
 	margin:5px;
-	height: 100px;
-	width: 100px;
+}
+
+#rule{
+	font-size: 20px;
 }
 
 #startbtn{
+	font-size: 18px;
 	margin-top: 30px;
 	margin-bottom: 30px;
 }
@@ -27,17 +30,19 @@ span{
 	font-size:30px;
 }
 
+#rank{
+	font-size:20px;
+}
+
 #level{
-	font-size:25px;
+	font-size:18px;
 	text-align: center;
-	height: 100px;
-	width: 100px;
 	margin-top:30px;
 	margin-bottom: 30px;
 }
 
 #timer{
-	font-size: 30px;
+	font-size: 35px;
 	letter-spacing: 0.1em;
 	vertical-align: top;
 	margin-left: 5px;

@@ -1,6 +1,8 @@
 $(function(){
 	$('#rule').modal('show');
+	// 画像をリサイズ
 	$('img').imgLiquid();
+	// レベル表示を隠す
 	$('#level').hide();
 });
 
@@ -57,6 +59,7 @@ function gameStart(){
 	}
 	$('#cells').html(cells);
 
+	// レベルを表示させる
 	$('#level').show();
 	$('#level').text('レベル'+(level+1) );
 
