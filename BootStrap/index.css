@@ -18,3 +18,16 @@ img.img-thumbnail{
 a:link,a:hover{
    color: black;
 }
+
+/*くるくるくれっしーくん用エフェクト*/
+@keyframes kurukuru {
+    0% {transform: rotate(0deg);}
+    50% {transform: rotate(180deg);}
+    100% {transform: rotate(360deg);}
+}
+.mawaru {
+    animation-name: kurukuru;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
