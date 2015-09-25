@@ -1,6 +1,7 @@
 $(function(){
 	$('#rule').modal('show');
 	$('img').imgLiquid();
+	$('#level').hide();
 });
 
 
@@ -11,7 +12,7 @@ var games = [
 	['人 ', '入 '],
 	['千 ', '誤 '],
 	['崇 ', '誤 '],
-	
+
 ];
 
 var MAX_LEVEL = games.length-1,
@@ -56,6 +57,7 @@ function gameStart(){
 	}
 	$('#cells').html(cells);
 
+	$('#level').show();
 	$('#level').text('レベル'+(level+1) );
 
 	//dummyで埋められた配列をつくる
@@ -69,11 +71,11 @@ function gameStart(){
 	var offset = Math.floor(Math.random() * chars.length);
 	chars.splice(offset, 1, seikai);
 	//$('#s'+ (offset+1) ).attr("class", "point");
-	
+
 	//span要素にそれらの配列の値をはめこむ
 	for(var i=1; i<=chars.length; i++){
 		$('#s'+i).text(chars[i-1]);
-		
+
 		//正解をマウスダウンすると色が変わる
 		$('#s'+i).mousedown(function(){
 			if($(this).text() == seikai){
@@ -87,7 +89,7 @@ function gameStart(){
 		});
 
 		$('#s'+i).click(function(){
-			if($(this).text() == seikai){	
+			if($(this).text() == seikai){
 				soundCorrect();
 				level++;
 				dim += DIM_DELTA;
