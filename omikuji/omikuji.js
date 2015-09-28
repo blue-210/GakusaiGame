@@ -98,6 +98,7 @@ var hopeScore,
 
 $(document).ready( function(){
 	$('#imgResult').hide();
+	$('#btnReplay').hide();
 });
 
 
@@ -208,6 +209,7 @@ function start(){
 	$('#imgOmikuji').attr('src' ,'../images/omikuji_after.jpg');
 	sound();
 	$('#imgResult').show("nomal");
+	$('#btnReplay').fadeIn();
 	$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
 	$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
 	getOmikuji()
