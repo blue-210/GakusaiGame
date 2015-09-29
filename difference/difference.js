@@ -162,7 +162,7 @@ function moveImg(){
 
 function sendResult(time){
    $.ajax({
-      url: 'http://localhost:1080/GakusaiGame/judge',
+      url: 'http://localhost:8080/game2015/judge',
       type:'GET',
       dataType: 'json',
       data:{
