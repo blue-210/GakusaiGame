@@ -79,11 +79,11 @@ function gameStart(){
 	for(var i=1; i<=chars.length; i++){
 		$('#s'+i).text(chars[i-1]);
 
-		//正解をマウスダウンすると色が変わる
+		//マウスダウンで色が変わる
 		$('#s'+i).mousedown(function(){
 			if($(this).text() == seikai){
 				$(this).attr("class","text-primary");
-			}else{
+			}else{　
 				$(this).attr("class","text-danger");
 				$(this).mouseup(function(){
 					$(this).attr("class","");

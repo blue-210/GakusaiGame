@@ -74,17 +74,17 @@ var study = [
 
 var comment = [
 	//大吉
-		"大吉だ！。最高だな！<br>だからって調子に乗るなよ。",
+		"大吉だ！。最高だな！<br>だからって調子に乗ってると痛い目みるぞ。",
 	//中吉
-		"中吉だね。<br>うん、いい方。全然いい方だよ。",
+		"中吉だな。<br>うん、いい方。全然いい方だよ。<br>決して面白味があるとはいえないけど全然いい方。",
 	//小吉
-		"小吉だね。<br>コメントに困る結果だよ。。。",
+		"小吉だな。<br>コメントに困る結果だよ。。。",
 	//末吉
-		"末吉だね。<br>中の下。その程度の人間ってこと。",
+		"末吉だな。<br>中の下。その程度の人間ってこと。",
 	//凶
-		"凶だね。<br>あ～あ",
+		"凶だな。<br>あ～あ",
 	//大凶
-		"大凶だね。ご愁傷様。<br>でも気を落とすなよ。<br>大凶ってことはこれ以上下がることはないってことだ。"
+		"大凶だな。ご愁傷様。<br>でも気を落とすなよ。<br>一番出る確率低いからむしろ運がいいかもな。"
 ]
 
 var hopeScore,
@@ -179,11 +179,11 @@ function getScore(){
 	var score;
 	//乱数から 0~4は0（良）、 5~7は1（普通） 8,9は2（悪い）を返す
 	var num = Math.floor(Math.random() * 9);
-	if(num <=  2) 
+	if(num <=  4) 
 		score = 0;
-	else if(num <= 5)
+	else if(num <= 7)
 		score = 1;
-	else if(num <= 8)
+	else if(num <= 9)
 		score = 2;
 	
 	return score;
@@ -210,8 +210,8 @@ function start(){
 	sound();
 	$('#imgResult').show("nomal");
 	$('#btnReplay').fadeIn();
-	$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
-	$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
+	//$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
+	//$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
 	getOmikuji()
 	
 }
@@ -226,6 +226,7 @@ function sound(){
 var i = 0;
 function changeKannushi(){
 	$('#imgKannushi').attr('src',img[i]);
+	$('#kannushiComment').html(comment[i]);
 	if(i < 6) i++;
 	else i=0;
 }
