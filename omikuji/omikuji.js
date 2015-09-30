@@ -178,12 +178,12 @@ function getOmikuji(){
 function getScore(){
 	var score;
 	//乱数から 0~4は0（良）、 5~7は1（普通） 8,9は2（悪い）を返す
-	var num = Math.floor(Math.random() * 9);
-	if(num <=  4) 
+	var num = Math.floor(Math.random() * 8);
+	if(num <=  3) 
 		score = 0;
-	else if(num <= 7)
+	else if(num <= 4)
 		score = 1;
-	else if(num <= 9)
+	else if(num <= 8)
 		score = 2;
 	
 	return score;
