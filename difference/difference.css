@@ -21,8 +21,8 @@ span{
 
 #cells{
 	font-family:cursive;
-	font-size:30px;
-	margin-top:20px;
+	font-size:31px;
+	margin-top:0px;
 }
 
 
@@ -38,7 +38,7 @@ span{
 	font-size:18px;
 	text-align: center;
 	margin-top:30px;
-	margin-bottom: 30px;
+	margin-bottom: 0px;
 }
 
 #timer{
@@ -61,6 +61,18 @@ span{
 	top: 0px;
 	left: 0px;
 	opacity:0.5;
+}
+
+#btnOtherGame{
+	position: absolute; 
+	top: 890px; 
+	left:350px;
+}
+
+#btnReplay{
+	position: absolute; 
+	top: 890px; 
+	left:780px;
 }
 
 /* 点滅 */

@@ -11,13 +11,13 @@ var level = 0;
 var games = [
 	['大 ', '太 '],
 	['白 ', '臼 '],
-	['人 ', '入 '],
-	['千 ', '誤 '],
-	['崇 ', '誤 '],
+	['問 ', '間 '],
+	['微 ', '徴 '],
+	['ロ ', '口 '],
 
 ];
 
-var MAX_LEVEL = games.length-1,
+MAX_LEVEL = games.length-1,
 	DIM_FIRST = 5,
 	DIM_DELTA = 3,
 	dim = DIM_FIRST,
@@ -143,7 +143,7 @@ function moveImg(){
 
 	x = x + velx * divx;
 
-	if((x + $('#imgIsaka').width() > 1920) || (x < 0)){
+	if((x + $('#imgIsaka').width() > 1900) || (x < 0)){
 		divx = - divx;
 		x = x + velx * divx;
 	}

@@ -42,6 +42,20 @@
 			<!-- 問題本体 -->
 			<div id="cells"></div>
 
+			<!-- 違うゲームで遊ぶボタン -->
+			<button id="btnOtherGame" class="btn btn-primary btn-lg"
+                    onclick="window.location.href = '../index.html';">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        違うゲームであそぶ
+            </button>
+
+            <!-- もう一度遊ぶボタン -->
+            <button id="btnReplay" class="btn btn-primary btn-lg"
+                    onclick="window.location.reload();">
+                      <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 
+                      もう一度遊ぶ
+            </button>
+
 			<!-- スコア表示 -->
 			<div id="score" class="label label-primary"></div>
 		</div>
@@ -60,7 +74,7 @@
 	      <div class="modal-body myFontClass">
 	        <p>たくさんの文字の中に、1つだけ違う文字がまざってるよ。</p>
 	        <p>見つけたらその文字をクリック！</p>
-	        <p>問題はレベル3まであるよ。</p>
+	        <p>問題はレベル5まであるよ。</p>
 	        <p>ジャマものにまどわされずがんばって！</p>
 	        <p>早くクリアするとランキングに君の記録がのるよ！</p>
 	      </div>
