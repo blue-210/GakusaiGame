@@ -7,7 +7,7 @@ $(function(){
      $('.mawaru').css({left: x + 'px'});
      x = x + velx * divx;
 
-     if((x + $('.mawaru').width() > 1930) || (x < 0)){
+     if((x + $('.mawaru').width() > 1840) || (x < 0)){
        divx = - divx;
        x = x + velx * divx;
      }
