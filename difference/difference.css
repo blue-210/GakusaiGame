@@ -65,14 +65,14 @@ span{
 
 #btnOtherGame{
 	position: absolute; 
-	top: 890px; 
-	left:350px;
+	top: 850px; 
+	left:378px;
 }
 
 #btnReplay{
 	position: absolute; 
-	top: 890px; 
-	left:780px;
+	top: 850px; 
+	left:703px;
 }
 
 /* 点滅 */
