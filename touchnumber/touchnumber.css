@@ -46,6 +46,18 @@
 	opacity:0.5;
 }
 
+#btnOtherGame{
+	position: absolute; 
+	top: 890px; 
+	left:350px;
+}
+
+#btnReplay{
+	position: absolute; 
+	top: 890px; 
+	left:780px;
+}
+
 /* 点滅 */
 .blinking{
 	-webkit-animation:blink 0.2s ease-in-out infinite alternate;
