@@ -161,7 +161,6 @@ function moveImg(){
 }
 
 
-
 function sendResult(time){
    $.ajax({
       url: 'http://localhost:8080/game2015/judge',
