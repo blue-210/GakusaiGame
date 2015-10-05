@@ -77,6 +77,8 @@ $(function(){
                $('#start').hide();
                $('#board').hide();
                $('#timer').hide();
+               $('#btnOtherGame').hide();
+               $('#btnReplay').hide();
                sendResult(resultTime);
            }
            currentNum++;

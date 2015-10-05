@@ -102,6 +102,8 @@ function gameStart(){
 					$('#level').hide();
 					$('#cells').hide();
 					$('#timer').hide();
+					$('#btnOtherGame').hide();
+					$('#btnReplay').hide();
 					sendResult(resultTime);
 					level = 0;
 					dim = DIM_FIRST;
