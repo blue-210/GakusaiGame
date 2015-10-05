@@ -159,9 +159,7 @@ $(function(){
     		$('#current').append("<tr class=\"text-center\"><td>"+data[10].currentRank+"</td><td>"+parseFloat(data[11].currentScore).toFixed(2)+"</td></tr>");
 
           $('.modal-footer > button:first').on('click',function(){
-             $timeCount.text("0.00");
-             $('#start').show();
-             $('#timer').show();
+             window.location.reload();
           });
 
           $('.modal-footer > button:last').on('click',function(){
