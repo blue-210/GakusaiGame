@@ -34,29 +34,28 @@ TRUNCATE TABLE diffranking;
 
 -- テストデータの挿入
 -- 数字タッチゲーム
-INSERT INTO touchranking VALUES(1,3.04);
-INSERT INTO touchranking VALUES(2,4.21);
-INSERT INTO touchranking VALUES(3,5.00);
-INSERT INTO touchranking VALUES(4,5.00);
-INSERT INTO touchranking VALUES(5,6.12);
-INSERT INTO touchranking VALUES(6,6.14);
-INSERT INTO touchranking VALUES(7,6.20);
-INSERT INTO touchranking VALUES(8,6.30);
-INSERT INTO touchranking VALUES(9,7.12);
-INSERT INTO touchranking VALUES(10,8.21);
+INSERT INTO touchranking VALUES(1,20.04);
+INSERT INTO touchranking VALUES(2,21.21);
+INSERT INTO touchranking VALUES(3,22.00);
+INSERT INTO touchranking VALUES(4,23.00);
+INSERT INTO touchranking VALUES(5,24.12);
+INSERT INTO touchranking VALUES(6,25.14);
+INSERT INTO touchranking VALUES(7,26.20);
+INSERT INTO touchranking VALUES(8,27.30);
+INSERT INTO touchranking VALUES(9,28.12);
+INSERT INTO touchranking VALUES(10,29.21);
 -- 間違い探しのデータ
-INSERT INTO diffranking VALUES(1,3.04);
-INSERT INTO diffranking VALUES(2,4.21);
-INSERT INTO diffranking VALUES(3,5.66);
-INSERT INTO diffranking VALUES(4,5.67);
-INSERT INTO diffranking VALUES(5,6.12);
-INSERT INTO diffranking VALUES(6,6.14);
-INSERT INTO diffranking VALUES(7,6.20);
-INSERT INTO diffranking VALUES(8,6.30);
-INSERT INTO diffranking VALUES(9,7.12);
-INSERT INTO diffranking VALUES(10,8.21);
+INSERT INTO diffranking VALUES(1,23.04);
+INSERT INTO diffranking VALUES(2,24.21);
+INSERT INTO diffranking VALUES(3,25.66);
+INSERT INTO diffranking VALUES(4,25.67);
+INSERT INTO diffranking VALUES(5,26.12);
+INSERT INTO diffranking VALUES(6,26.14);
+INSERT INTO diffranking VALUES(7,26.20);
+INSERT INTO diffranking VALUES(8,26.30);
+INSERT INTO diffranking VALUES(9,27.12);
+INSERT INTO diffranking VALUES(10,28.21);
 commit;
-
 -- テストデータの修正
 UPDATE touchranking SET rank=1, score=3.13 WHERE rank = 1;
 UPDATE touchranking SET rank=2,score=4.34 WHERE rank = 2;

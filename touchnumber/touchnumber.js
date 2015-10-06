@@ -121,7 +121,7 @@ $(function(){
 
     function sendResult(time){
        $.ajax({
-          url: 'http://localhost:8080/game2015/judge',
+          url: 'http://172.19.253.32/:8080/game2015/judge',
           type:'GET',
           dataType: 'json',
           data:{
