@@ -5,3 +5,5 @@ javac -encoding utf-8 *.java -d ../classes
 javac -encoding utf-8 logic/*.java -d ../classes
 javac -encoding utf-8 dao/*.java -d ../classes
 javac -encoding utf-8 di/*.java -d ../classes
+
+cd C:\GitHub\GakusaiGame\Documents

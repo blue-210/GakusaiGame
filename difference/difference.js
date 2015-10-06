@@ -184,10 +184,10 @@ function sendResult(time){
 			  // ランク外ならば、直近のランクを「ランク外」に設定
 			  data[10].currentRank = 'ランク外';
 			  $('#ranking2').append("<tr class=\"text-center\"><td>"+rank+"位</td><td>"+parseFloat(data[i].score).toFixed(2)+"</td></tr>");
-		  }else if(data[10].currentRank == rank){
+		  }else if((data[10].currentRank+1) == rank){
 			  console.log("ランクインしてるよー")
 			  // ランクインしている場合
-			  $('#ranking2').append("<tr class=\"blinking text-center\"><td>"+data[10].currentRank+"位</td><td>"+parseFloat(data[11].currentScore).toFixed(2)+"</td></tr>");
+			  $('#ranking2').append("<tr class=\"blinking text-center\"><td>"+(data[10].currentRank+1)+"位</td><td>"+parseFloat(data[11].currentScore).toFixed(2)+"</td></tr>");
 		  }else{
 			  // 10位までを表示させる処理
 			  console.log("その他ー")
@@ -198,7 +198,7 @@ function sendResult(time){
 	  }
 	  // 最後に直近のランクとスコアを表示させる
 	  $('#current').append('<th class="text-center">あなたの順位</th><th class="text-center">あなたのタイム</th>');
-	  $('#current').append("<tr class=\"text-center\"><td>"+data[10].currentRank+"</td><td>"+parseFloat(data[11].currentScore).toFixed(2)+"</td></tr>");
+	  $('#current').append("<tr class=\"text-center\"><td>"+(data[10].currentRank+1)+"</td><td>"+parseFloat(data[11].currentScore).toFixed(2)+"</td></tr>");
 
       	$('.modal-footer > button:first').on('click',function(){
          window.location.reload();
