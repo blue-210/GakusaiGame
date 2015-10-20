@@ -19,6 +19,7 @@ $(function(){
 
     $("#start").on("click", function() {
         moveImg();
+        $("#start").prop("disabled", true);
        $('#board').hide();
         $timeCount.text("0.00");
         $board.html("");
