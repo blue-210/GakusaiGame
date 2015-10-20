@@ -85,9 +85,6 @@ function gameStart(){
 				$(this).attr("class","text-primary");
 			}else{　
 				$(this).attr("class","text-danger");
-				$(this).mouseup(function(){
-					$(this).attr("class","");
-				});
 			}
 		});
 
