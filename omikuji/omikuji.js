@@ -24,7 +24,8 @@ var hope = [
 	], 
 	[	//悪い結果
 		"しばらく叶うことはないようです。今は自分を磨きましょう。",
-		"神にお願いする前に、やることがあるんじゃない？"
+		"神にお願いする前に、やることがあるんじゃない？",
+		"叶わないでしょう。"
 	] 
 ]; 
 
@@ -125,49 +126,42 @@ function getOmikuji(){
 	switch(sumScore){
 		case 0:
 			$('#omikujiResult').text(omikuji[0]);//吉凶
-			console.log(omikuji[0]);
 			$('#kannushiComment').html(comment[0]);//神主のコメント
 			showResult();//各運勢の結果文
 			$('#imgKannushi').attr('src',img[0]);//神主の画像
 			break;
 		case 1:
 			$('#omikujiResult').text(omikuji[1]);
-			console.log(omikuji[1]);
 			$('#kannushiComment').html(comment[1]);
 			showResult();
 			$('#imgKannushi').attr('src',img[1]);
 			break;
 		case 2:
 			$('#omikujiResult').text(omikuji[2]);
-			console.log(omikuji[2]);
 			$('#kannushiComment').html(comment[2]);
 			showResult();
 			$('#imgKannushi').attr('src',img[2]);
 			break;
 		case 3:
 			$('#omikujiResult').text(omikuji[2]);
-			console.log(omikuji[2]);
 			$('#kannushiComment').html(comment[2]);
 			showResult();
 			$('#imgKannushi').attr('src',img[2]);
 			break;
 		case 4:
 			$('#omikujiResult').text(omikuji[3]);
-			console.log(omikuji[3]);
 			$('#kannushiComment').html(comment[3]);
 			showResult();
 			$('#imgKannushi').attr('src',img[3]);
 			break;
 		case 5:
 			$('#omikujiResult').text(omikuji[4]);
-			console.log(omikuji[4]);
 			$('#kannushiComment').html(comment[4]);
 			showResult();
 			$('#imgKannushi').attr('src',img[4]);
 			break;
 		case 6:
 			$('#omikujiResult').text(omikuji[5]);
-			console.log(omikuji[5]);
 			$('#kannushiComment').html(comment[5]);
 			showResult();
 			$('#imgKannushi').attr('src',img[5]);
@@ -211,8 +205,8 @@ function start(){
 	sound();
 	$('#imgResult').show("nomal");
 	$('#btnReplay').fadeIn();
-	//$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
-	//$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
+	$('#imgOmikuji').attr('onclick',''); //一回しかクリックできないようにonclick属性をカラに
+	$('#imgOmikuji').css('cursor', 'default'); //カーソルをポインタじゃなくす
 	getOmikuji()
 	
 }
@@ -223,7 +217,7 @@ function sound(){
 }
 
 
-//デバッグ用関数
+/*デバッグ用関数
 var i = 0;
 function changeKannushi(){
 	$('#imgKannushi').attr('src',img[i]);
@@ -231,3 +225,4 @@ function changeKannushi(){
 	if(i < 6) i++;
 	else i=0;
 }
+*/

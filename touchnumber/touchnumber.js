@@ -19,7 +19,7 @@ $(function(){
 
     $("#start").on("click", function() {
         moveImg();
-        $("#start").prop("disabled", true);
+        $("#start").prop("disabled", true);//ゲーム中ははじめるボタンを非活性に
        $('#board').hide();
         $timeCount.text("0.00");
         $board.html("");
