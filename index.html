@@ -7,6 +7,7 @@
    <script type="text/javascript" src="BootStrap\js\bootstrap.min.js"></script>
    <script type="text/javascript" src="BootStrap\index.js"></script>
    <script type="text/javascript" src="BootStrap/imgLiquid-min.js"></script>
+   <script type="text/javascript" src="BootStrap/rightclick_disable.js"></script>
    <!--BootStrap-->
    <link href="BootStrap\css\bootstrap.min.css" rel="stylesheet">
    <link href="BootStrap\index.css" rel="stylesheet">
@@ -48,6 +49,22 @@
       </div><!--row-->
       <img src="images/kurewalk.gif" class="mawaru" width="50px" height="50px">
       <img id="isaka" src="images/isaka.jpg" class="mawaru" width="50px" height="50px">
+
+      <!-- ↓右クリック時に表示 -->
+      <div class="modal fade" id="nomoreclick" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+   	  <div class="modal-dialog">
+   	    <div class="modal-content">
+   	      <div class="modal-header">
+   	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">閉じる</span></button>
+   	        <h4 class="modal-title text-center text-danger myFontClass" id="myModalLabel">反応がない・・・</h4>
+   	      </div>
+   	      <div class="modal-body myFontClass">
+   	        <h4 class="text-center text-danger">右クリックは禁止されているようだ</h4>
+   	      </div>
+   	    </div><!-- /.modal-content -->
+   	  </div><!-- /.modal-dialog -->
+   	</div><!-- /.modal -->
+      
    </div>
 </body>
 </html>

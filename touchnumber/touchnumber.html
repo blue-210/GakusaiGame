@@ -8,6 +8,8 @@
    <script type="text/javascript" src="../BootStrap/imgLiquid-min.js"></script>
    <script type="text/javascript" src="touchnumber.js"></script>
    <script src="../BootStrap/imgLiquid-min.js"></script>
+   <!-- 右クリック禁止 -->
+   <script type="text/javascript" src="../BootStrap/rightclick_disable.js"></script>
    <!--BootStrap-->
    <link href="../BootStrap/css/bootstrap.min.css" rel="stylesheet">
    <link href="touchnumber.css" rel="stylesheet">
@@ -53,7 +55,7 @@
             <!-- もう一度遊ぶボタン -->
             <button id="btnReplay" class="btn btn-primary btn-lg"
                     onclick="window.location.reload();">
-                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> 
+                <span class="glyphicon glyphicon-repeat" aria-hidden="true"></span>
                 もう一度遊ぶ
             </button>
          </div>
@@ -95,6 +97,22 @@
        </div><!-- /.modal-content -->
      </div><!-- /.modal-dialog -->
    </div><!-- /.modal -->
+
+   <!-- ↓右クリック時に表示 -->
+   <div class="modal fade" id="nomoreclick" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+     <div class="modal-dialog">
+       <div class="modal-content">
+         <div class="modal-header">
+           <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">閉じる</span></button>
+           <h4 class="modal-title text-center text-danger myFontClass" id="myModalLabel">反応がない・・・</h4>
+         </div>
+         <div class="modal-body myFontClass">
+           <h4 class="text-center text-danger">右クリックは禁止されているようだ</h4>
+         </div>
+       </div><!-- /.modal-content -->
+     </div><!-- /.modal-dialog -->
+   </div><!-- /.modal -->
+
 </center>
 </body>
 </html>
